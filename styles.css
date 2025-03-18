@@ -1,14 +1,301 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Quattrocento', serif;
-    background-color: white;
+
+html {
+    scroll-behavior: smooth; /* Animación suave al scrollear */
 }
+
+/* Estilos generales */
+body {
+    font-family: "Quattrocento", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    transition: height 0.3s ease-in-out; /* Transición para el tamaño del header*/
+}
+
+/* Imágenes de encabezado*/
+header img {
+    height: auto;
+    width: 12%;
+    margin-left: 5%;
+
+    transition: all 0.3s ease-in-out; /* Transición para el tamaño del header*/
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: center;
+    list-style: none;
+    gap: 3em;
+    margin: 0;
+    margin-right: 100px;
+    padding: 0;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+
+    font-family: "Pathway Gothic One", sans-serif;
+    font-size: 1.2vw;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #93b786;
+}
+
+.Inicio {
+    background-image: linear-gradient( 180deg, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0) 100% ), url(Images/Main_Image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.InicioTexto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.InicioTexto h1 {
+    color: white;
+    font-family: "Quattrocento", serif;
+    font-size: 5vw;
+    letter-spacing: 6px;
+    border-bottom: 1px solid white;
+    padding: 0 3em;
+}
+
+.InicioTexto h2 {
+    color: white;
+    font-family: "Quattrocento", serif;
+    margin-top: 32px;
+    font-size: 2vw;
+    letter-spacing: 3px;
+    padding: 0 3em;
+}
+
+.AtmosferaDivider {
+    background-image: linear-gradient( 180deg, rgb(221, 221, 221, 0.5) 68%, rgb(221, 221, 221, 0.5) 100% ), url(Images/Fondo_Marmol.png);
+    height: 40vh;
+    padding: 5vw;
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    box-shadow:inset 0px 16px 18px 0px rgba(63,63,31,0.3); /*  Sombra Interior del contenedor */
+    font-family: "Quattrocento";
+}
+
+.AtmosferaDivider img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.AtmosferaDivider h2 {
+    font-size: 3vw;
+}
+
+.AtmosferaDivider p {
+    font-size: 1.1vw;
+    color: #707070;
+    margin-right: 60%;
+}
+
+.GastronomiaAutentica {
+    background-image: url(Images/Fondo_Gastronomia_Autentica.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    box-shadow: 0px 0px 18px 16px rgba(63,63,31,0.3); /* Sombra exterior del contenedor*/
+}
+
+/* Contenedor para distribuir espacio */
+.GastronomiaAutenticaTitleContainer {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/* Contenedor para colocar fondo en oscuro y acomodar texto */
+.GastronomiaAutenticaTitulo {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 50%;
+    width: 35%;
+    text-align: start;
+    display: flex;
+    align-items: center;
+}
+
+/* Cambios de la fuente */
+.GastronomiaAutenticaTitulo h2{
+    font-family: "Quattrocento", serif;
+    font-weight: bold;
+    font-size: 3vw;
+    max-width: 100%;
+    padding: 5%;
+}
+
+/* Contenedor para distribuir espacio */
+.GastronomiaAutenticaDescripcionContainer {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+/* Contenedor para distribuir espacio */
+.GastronomiaAutenticaDescripcion {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 55%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+/* Cambios de la fuente */
+.GastronomiaAutenticaDescripcion p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5vw;
+    padding: 5%;
+    margin-left: 5%;
+    text-align: end;
+}
+
+/* Contenedor principal */
+.Menu {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.Menu h1{
+    
+}
+
+/* Botones de navegación */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.prev {
+    left: 5%;
+}
+
+.next {
+    right: 5%;
+}
+
+/* Contenedor del carrusel */
+.carrusel-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Carrusel */
+.carrusel {
+    display: flex;
+    gap: 50px; /* Espaciado entre las imágenes */
+    transition: transform 0.8s ease;
+}
+
+/* Imágenes del carrusel */
+.item {
+    min-width: 250px;
+    height: 350px;
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+}
+
+/* Imagen activa (aumento de tamaño) */
+.item.active {
+    transform: scale(1.2); /* Aumento del 8% */
+    z-index: 10; /* Prioridad de la imagen activa */
+}
+
+/* Ajustar las imágenes */
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Indicadores (dots) */
+.dots {
+    margin-top: 20px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #4CAF50; /* Dot activo */
+}
+
 
 .platillo {
     position: relative;
@@ -22,6 +309,7 @@ body {
     gap: 20px;
 }
 
+/* Sección de platos fuertes*/
 .platillo div {
     display: flex;
     align-items: center;
@@ -80,7 +368,6 @@ body {
     filter: blur(10px);
     z-index: -1;
 }
-
 
 /* Footer */
 footer {

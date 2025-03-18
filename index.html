@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +9,99 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- Link a la hoja de estilos -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Link de la fuentes -->
+    <!-- Quattrocento y Gothic One Family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <!--Logo de la página-->
+        <img src="Images/Delicato_Logo.png" alt="Delicato Logo">
+        <!-- Barra de navegación -->
+        <nav>
+            <ul>
+                <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Nosotros">Nosotros</a></li>
+                <li><a href="#Menu">Menú</a></li>
+                <li><a href="#Reserva">Reserva</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="script.js" defer></script>
 
+    <!-- Imagen de inicio principal -->
+    <div id="Inicio" class="Inicio">
+        <!-- Div para centrar el texto -->
+        <div class="InicioTexto">
+            <h1>DELICATO</h1>
+            <h2>Restaurante</h2>
+        </div>
+    </div>
+    
+    <!-- Sección de Nosotros -->
+    <div id="Nosotros">
+        <!-- Divisor de MICHELIN -->
+        <div class="AtmosferaDivider">
+            <div class="AtmosferaTexto">
+                <h2>Atmósfera Fascinante</h2>
+                <p>El Restaurante Delicato es ideal para sus momentos más importantes, para una cena romántica o para un almuerzo familiar.</p>
+            </div>
+            <img src="Images/MICHELIN-2025_Selected_E-label_Logo.png" alt="Estrella MICHELIN">
+        </div>
 
-    <div class="platillo">
+        <!-- Sección de gastronomía autentica -->
+        <div class="GastronomiaAutentica">
+            <div class="GastronomiaAutenticaTitleContainer">
+                <div class="GastronomiaAutenticaTitulo">
+                    <h2>Gastronomía autentica</h2>
+                </div>
+            </div>
+            <div class="GastronomiaAutenticaDescripcionContainer">
+                <div class="GastronomiaAutenticaDescripcion">
+                    <p>Un auténtico proyecto gastronómico, una cocina básica sostenible que nace del amor por nuestro territorio, ingredientes tradicionales procesados con maestría a través de técnicas de cocina contemporáneas.
+                    Cocina de proximidad y memoria gastronómica, sin excesos estilísticos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Sección de Carrusel-->
+    <div class="Menu" id="Menu">
+      <h1>Nuestros Platos</h1>
+
+      <!-- Botón Anterior -->
+      <button class="btn prev" id="prevBtn">❮</button>
+
+      <!-- Contenedor del Carrusel -->
+      <div class="carrusel-container">
+          <div class="carrusel" id="carrusel">
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 1"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 2"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 3"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 4"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 5"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 6"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 1"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 2"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 3"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 4"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 5"></div>
+              <div class="item"><img src="Images/Main Image.jpg" alt="Plato 6"></div>
+          </div>
+      </div>
+
+      <!-- Botón Siguiente -->
+      <button class="btn next" id="nextBtn">❯</button>
+
+      <!-- Indicadores (dots) -->
+      <div class="dots" id="dots"></div>
+  </div>
+  <script src="script.js"></script>
+
+  <div class="platillo">
         <div class="marmol">
             <div class="Carbonara"><h2> Spaghetti alla Carbonara <img src="Images/Carbonara.jpg" alt="Pasta carboanra"></h2></div>
             <div class="Ossobuco"><h2>Ossobuco alla Milanese <img src="Images/Ossobuco.jpg" alt="Ossobuco"></h2></div>
@@ -21,45 +109,42 @@
             <div class="Pollo"><h2>Pollo al Marsala <img src="Images/Pollo al Marsala.jpg" alt="Pollo"></h2></div>
         </div>
         
-    </div>
+  </div>
 
+  <!-- Sección del footer-->
+  <footer>
+      <div class="footer-container">
+          <!-- Logo izquierda -->
+          <div class="logo">
+              <h2>DELICATO <img src="Images/Bandera italia.png" alt="Bandera de italia"></h2>
+              <h3>RISTORANTE</h3>
+          </div>
 
+          <!-- Informacion de contacto -->
+          <div class="info-container">
+              <div class="contact-info">
+                  <h4>Direccion</h4>
+                  <p>Via Umberto I, 2 02043 – Contigliano (Rieti)</p>
+              </div>
+              <div class="contact-info">
+                  <h4>EMAIL</h4>
+                  <p>restaurant@miramar-cambrils.com</p>
+                  <h4>TELEPHONE</h4>
+                  <p>+34 977 36 00 63</p>
+              </div>
+          </div>
 
+          <!-- Redes sociales -->
+          <div class="social-container">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+      </div>
 
-    <footer>
-        <div class="footer-container">
-            <!-- Logo izquierda -->
-            <div class="logo">
-                <h2>DELICATO <img src="Images/Bandera italia.png" alt="Bandera de italia"></h2>
-                <h3>RISTORANTE</h3>
-            </div>
-
-            <!-- Informacion de contacto -->
-            <div class="info-container">
-                <div class="contact-info">
-                    <h4>Direccion</h4>
-                    <p>Via Umberto I, 2 02043 – Contigliano (Rieti)</p>
-                </div>
-                <div class="contact-info">
-                    <h4>EMAIL</h4>
-                    <p>restaurant@miramar-cambrils.com</p>
-                    <h4>TELEPHONE</h4>
-                    <p>+34 977 36 00 63</p>
-                </div>
-            </div>
-
-            <!-- Redes sociales -->
-            <div class="social-container">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="footer-text"><em>Rispetto per il territorio</em></p>
-            <p class="rights">Todos los derechos reservados | Delicato@</p> 
-        </div>  
-    </footer>
-
+      <div class="footer-bottom">
+          <p class="footer-text"><em>Rispetto per il territorio</em></p>
+          <p class="rights">Todos los derechos reservados | Delicato@</p> 
+      </div>  
+  </footer>
 </body>
 </html>
