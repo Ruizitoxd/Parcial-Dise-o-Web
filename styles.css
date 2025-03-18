@@ -1,0 +1,120 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quattrocento', serif;
+    background-color: white;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    padding: 2% 5%;
+    text-align: center;
+    border-top: 0.2% solid black;
+}
+
+/* Contenedor principal */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Logo alineado con la bandera */
+.logo {
+    text-align: left;
+    width: 30%;
+}
+
+.logo h2 {
+    font-size: 2vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 1.5vw;
+    height: auto;
+    margin-left: 0.5vw;
+}
+
+/* Línea superior en el subtítulo */
+.logo h3 {
+    font-size: 1.5vw;
+    font-weight: normal;
+    border-top: 0.2vw solid black;
+    padding-top: 0.5vw;
+}
+
+/* Contenedor de información */
+.info-container {
+    display: flex;
+    gap: 5%;
+    width: 40%;
+    justify-content: center;
+}
+
+/* Contacto */
+.contact-info {
+    text-align: left;
+    width: 50%;
+}
+
+.contact-info h4 {
+    font-size: 1.2vw;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+}
+
+.contact-info p {
+    font-size: 1vw;
+    color: #555;
+    margin-bottom: 1vw;
+}
+
+/* Redes sociales */
+.social-container {
+    display: flex;
+    gap: 1.5vw;
+    justify-content: center;
+    width: 15%;
+}
+
+.social-container a {
+    background-color: #001f3f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2vw;
+}
+
+/* Información final */
+.footer-bottom {
+    margin-top: 2%;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 1.5vw;
+    font-style: italic;
+}
+
+.rights {
+    font-size: 1vw;
+    margin-top: 0.5vw;
+}
