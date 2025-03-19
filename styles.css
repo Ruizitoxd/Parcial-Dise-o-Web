@@ -209,12 +209,25 @@ nav ul li a:hover {
 /* Contenedor principal */
 .Menu {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 150px;
+    height: 100vh;
     position: relative;
 }
 
-.Menu h1{
+.Menu-titulo{
+    font-family: "Quattrocento", serif;
+    font-size: 5vw;
+}
+
+.linea{
+    width: 95%; /* Ajusta el largo de la línea */
+    height: 3px;  /* Grosor de la línea */
+    margin: 0 auto; /* Centrar la línea */
+    margin-top: 40px;
+    margin-bottom: 200px;
     
+    /* Gradiente para efecto de desvanecido */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Botones de navegación */
