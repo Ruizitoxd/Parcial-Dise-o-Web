@@ -321,7 +321,7 @@ img {
     background: #4CAF50;
 }
 
-.Platillo {
+.platillo {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -335,14 +335,16 @@ img {
 
 
 /* Sección de platos fuertes*/
-.Platillo div {
+.platillo div {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px; /* Espacio entre la imagen y el texto */
     width: 42%; /* Define un ancho para la sección de cada platillo */
+}
 
-.Marmol{
+
+.marmol{
     width: 40%; /* Ajusta el ancho de la sección de mármol */
     height: 100%; /* Permite que la altura se adapte al contenido */
     background: url('Images/Fondo_Marmol.png');
@@ -383,7 +385,7 @@ img {
 }
 
 /* Fondo difuminado */
-.Platillo::before {
+.platillo::before {
     content: "";
     position: absolute;
     top: 0;
@@ -437,6 +439,7 @@ img {
     font-size: 30px;
     color: white;
     cursor: pointer;
+}
 
 /* Sección para la reserva */
 .Reserva {

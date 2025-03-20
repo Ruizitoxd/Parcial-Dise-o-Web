@@ -163,8 +163,7 @@ function toggleButtons(selected) {
         btn2.classList.add("active");
         btn1.classList.remove("active");
     }
-  });
-});
+  }
 
 //Código para acomodar el modal de las imagenes de platos principales.
 document.addEventListener("DOMContentLoaded", function () {
@@ -191,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-}
+
 
 btn1.addEventListener("click", () => toggleButtons(btn1));
 btn2.addEventListener("click", () => toggleButtons(btn2));
