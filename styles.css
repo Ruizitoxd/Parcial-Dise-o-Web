@@ -235,7 +235,6 @@ nav ul li a:hover {
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%);
 }
 
-
 /* Botones de navegación */
 .btn-carrousel {
     position: absolute;
@@ -277,8 +276,6 @@ nav ul li a:hover {
     min-width: 300px;
     box-sizing: border-box;
     transition: transform 0.8s ease;
-   
-    
 }
 
 img {
@@ -334,7 +331,6 @@ img {
     gap: 20px;
 }
 
-
 /* Sección de platos fuertes*/
 .platillo div {
     display: flex;
@@ -343,7 +339,6 @@ img {
     gap: 10px; /* Espacio entre la imagen y el texto */
     width: 42%; /* Define un ancho para la sección de cada platillo */
 }
-
 
 .marmol{
     width: 40%; /* Ajusta el ancho de la sección de mármol */
@@ -371,7 +366,6 @@ img {
     align-items: center;
     gap: 20px; /* Espacio entre la imagen y el nombre */
 }
-
 
 .food-item img {
     width: 90%; /* Ajusta el tamaño de la imagen */
@@ -448,7 +442,7 @@ img {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -498,7 +492,6 @@ img {
 }
 
 /* Cambio de input para la caja */
-
 .form-control{
     font-family: "Quattrocento", serif;
     color: #707070;
@@ -646,8 +639,6 @@ img {
     display: block !important; /* Ahora sí se mostrará */
 }
 
-
-
 /* Responsividad */
 @media (max-width: 576px) {
     .w-340px {
@@ -659,7 +650,67 @@ img {
     }
 }
 
+/* Contenedor principal */
+.SeccionMesaContainer {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
 
+/* Mesa */
+.Mesa {
+    position: relative;
+    z-index: 2;
+}
+
+/* Contenedor de sillas */
+.SillaContainer {
+    position: absolute;
+    top: 82%; /* Ajuste relativo a la mesa */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%; /* Ajustar según el tamaño de la mesa */
+    height: 250px;
+}
+
+/* Estilo general de las sillas */
+.Silla {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    display: none; /* Ocultar por defecto */
+}
+
+/* Posiciones específicas de las sillas */
+.SillaBack {
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SillaLeft {
+    left: -75%;
+    top: 50%;
+    width: 150px;
+    height: auto;
+    transform: translateY(-50%);
+}
+
+.SillaRight {
+    right: -75%;
+    top: 50%;
+    width: 150px;
+    height: auto;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* Clases condicionales para mostrar las sillas */
+.Sillas-1 .SillaBack { display: block; }
+.Sillas-2 .SillaLeft, .Sillas-2 .SillaRight { display: block; }
+.Sillas-3 .SillaLeft, .Sillas-3 .SillaBack, .Sillas-3 .SillaRight { display: block; }
 
 /* Footer */
 footer {
@@ -769,7 +820,6 @@ footer {
 .rights {
     font-size: 1vw;
     margin-top: 0.5vw;
-
 }
 
 /* Centrar el contenido del offcanvas */
@@ -806,7 +856,6 @@ footer {
 .icon-container{
     align-items: center;
 }
-
 
 /* Estilo del mapa */
 iframe {
