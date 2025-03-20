@@ -433,9 +433,9 @@ window.addEventListener("scroll", function () {
 //Desplegar sillas según la opción
 document.addEventListener("DOMContentLoaded", function () {
     // Seleccionar el dropdown de personas
-    const dropdownPersonas = document.querySelector(".calendarioDropdown .mi-dropdown");
-    const inputPersonas = dropdownPersonas.querySelector(".mi-dropdown-input");
-    const opcionesPersonas = dropdownPersonas.querySelectorAll(".mi-dropdown-menu li");
+    const dropdownPersonas = document.querySelector(".calendarioDropdown .personas-dropdown");
+    const inputPersonas = dropdownPersonas.querySelector(".personas-dropdown-input");
+    const opcionesPersonas = dropdownPersonas.querySelectorAll(".personas-dropdown-menu li");
     const sillaContainer = document.getElementById("silla-container");
 
     // Mostrar/Ocultar el menú de personas
