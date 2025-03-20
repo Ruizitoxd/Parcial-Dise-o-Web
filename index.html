@@ -146,13 +146,13 @@
                     <input type="text" class="form-control form-control-sm" id="nombre">
 
                     <label for="email">Correo</label>
-                    <input type="text" class="form-control form-control-sm" id="email">
+                    <input type="email" class="form-control form-control-sm" id="email">
 
                     <label for="telefono">Teléfono</label>
-                    <input type="email" class="form-control form-control-sm" id="telefono">
+                    <input type="tel" class="form-control form-control-sm" id="telefono">
 
                     <div class="GrupoBotonesTipoCena">
-                        <div class="slider left"></div>
+                        <div class="slider slider-oscuro left"></div>
                         <button id="btn-almuerzo" class="active">Almuerzo</button>
                         <button id="btn-cena">Cena</button>
                     </div>
@@ -160,35 +160,36 @@
                     <!-- Div para acomodar la reserva de la fecha -->
                     <div class="calendarioDropdown">
                         <div class="dropdownContainer">
-                            <!-- Dropdown de personas -->
-                            <div class="mi-dropdown">
-                                <div class="mi-dropdown-container">
-                                    <button class="mi-dropdown-button">
+                            <!-- Dropdown de Personas -->
+                            <div class="personas-dropdown">
+                                <div class="personas-dropdown-container">
+                                    <button class="personas-dropdown-button">
                                         <i class="fas fa-users"></i>
                                         <span class="arrow">&#9660;</span>
                                     </button>
-                                    <input type="text" class="mi-dropdown-input" placeholder="Personas">
+                                    <input type="text" class="personas-dropdown-input" placeholder="Personas">
                                 </div>
-                                <div class="mi-dropdown-content">
-                                    <ul class="mi-dropdown-menu">
-                                        <li data-value="1">1</li>
-                                        <li data-value="2">2</li>
-                                        <li data-value="3">3</li>
+                                <div class="personas-dropdown-content">
+                                    <ul class="personas-dropdown-menu">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+
                                     </ul>
                                 </div>
                             </div>
 
-                            <!-- Dropdown de horas -->
-                            <div class="mi-dropdown">
-                                <div class="mi-dropdown-container">
-                                    <button class="mi-dropdown-button">
+                            <!-- Dropdown de Horas -->
+                            <div class="hora-dropdown">
+                                <div class="hora-dropdown-container">
+                                    <button class="hora-dropdown-button">
                                         <i class="fa-regular fa-clock"></i>
                                         <span class="arrow">&#9660;</span>
                                     </button>
-                                    <input type="text" class="mi-dropdown-input" placeholder="Hora">
+                                    <input type="text" class="hora-dropdown-input" placeholder="Hora">
                                 </div>
-                                <div class="mi-dropdown-content">
-                                    <ul class="mi-dropdown-menu">
+                                <div class="hora-dropdown-content">
+                                    <ul class="hora-dropdown-menu">
                                         <li>16:00</li>
                                         <li>17:00</li>
                                         <li>18:00</li>
@@ -200,6 +201,7 @@
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
 
                         <!-- Calendario Date Picker -->
@@ -311,10 +313,14 @@
                     width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+
             </div>
         </div>
     </div>
     <script src="js/imagenExpandida.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 </body>
 
 </html>
