@@ -152,44 +152,54 @@
                         <button id="btn-cena">Cena</button>
                     </div>
 
-                    <!-- Dropdown de personas -->
-                    <div class="mi-dropdown">
-                        <div class="mi-dropdown-container">
-                            <button class="mi-dropdown-button">
-                                <i class="fas fa-users"></i>
-                                <span class="arrow">&#9660;</span>
-                            </button>
-                            <input type="text" class="mi-dropdown-input" placeholder="Personas">
-                        </div>
-                        <div class="mi-dropdown-content">
-                            <ul class="mi-dropdown-menu">
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- Div para acomodar la reserva de la fecha -->
+                    <div class="calendarioDropdown">
+                        <div class="dropdownContainer">
+                            <!-- Dropdown de personas -->
+                            <div class="mi-dropdown">
+                                <div class="mi-dropdown-container">
+                                    <button class="mi-dropdown-button">
+                                        <i class="fas fa-users"></i>
+                                        <span class="arrow">&#9660;</span>
+                                    </button>
+                                    <input type="text" class="mi-dropdown-input" placeholder="Personas">
+                                </div>
+                                <div class="mi-dropdown-content">
+                                    <ul class="mi-dropdown-menu">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                    <!-- Dropdown de horas -->
-                    <div class="mi-dropdown">
-                        <div class="mi-dropdown-container">
-                            <button class="mi-dropdown-button">
-                                <i class="fa-regular fa-clock"></i>
-                                <span class="arrow">&#9660;</span>
-                            </button>
-                            <input type="text" class="mi-dropdown-input" placeholder="Hora">
+                            <!-- Dropdown de horas -->
+                            <div class="mi-dropdown">
+                                <div class="mi-dropdown-container">
+                                    <button class="mi-dropdown-button">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <span class="arrow">&#9660;</span>
+                                    </button>
+                                    <input type="text" class="mi-dropdown-input" placeholder="Hora">
+                                </div>
+                                <div class="mi-dropdown-content">
+                                    <ul class="mi-dropdown-menu">
+                                        <li>16:00</li>
+                                        <li>17:00</li>
+                                        <li>18:00</li>
+                                        <li>19:00</li>
+                                        <li>20:00</li>
+                                        <li>21:00</li>
+                                        <li>22:00</li>
+                                        <li>23:00</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mi-dropdown-content">
-                            <ul class="mi-dropdown-menu">
-                                <li>16:00</li>
-                                <li>17:00</li>
-                                <li>18:00</li>
-                                <li>19:00</li>
-                                <li>20:00</li>
-                                <li>21:00</li>
-                                <li>22:00</li>
-                                <li>23:00</li>
-                            </ul>
+
+                        <!-- Calendario Date Picker -->
+                        <div class="calendar-container">
+                            <div class="calendar" id="calendar"></div>
                         </div>
                     </div>
 

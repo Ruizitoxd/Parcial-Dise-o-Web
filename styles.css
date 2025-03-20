@@ -482,11 +482,21 @@ nav ul li a:hover {
     transform: translateX(100%);
 }
 
+/* CSS que acomoda la sección especial de la reserva */
+.calendarioDropdown {
+    display: flex;
+}
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
 /* Personalización de los dropdown de personas y hora */
 .mi-dropdown {
     position: relative;
     width: 40%;
-    margin-bottom: 5%;
 }
 
 .mi-dropdown-container {
@@ -560,6 +570,148 @@ nav ul li a:hover {
 /* Clase para mostrar el menú */
 .show-menu {
     display: block !important; /* Ahora sí se mostrará */
+}
+
+/* CSS deñ calendario */
+/* Estilo del calendario */
+.cal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Encabezado del mes */
+.cal-month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+/* Botones de navegación del mes */
+.cal-btn {
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cal-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Nombre del mes */
+.cal-month-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Días de la semana */
+.cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+/* Días del mes */
+.cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px; /* Espacio entre los días */
+}
+
+/* Botón de los días */
+.cal-days .cal-btn {
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* Día activo (seleccionado) */
+.cal-days .cal-btn:focus {
+    background-color: #0d6efd; /* Color primario de Bootstrap */
+    color: white;
+    outline: none;
+}
+
+/* Días deshabilitados (mes anterior o siguiente) */
+.cal-days .cal-btn:disabled {
+    color: #adb5bd;
+    cursor: not-allowed;
+    background: none;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+    .w-340px {
+        width: 100%;
+    }
+
+    .cal-btn {
+        padding: 0.5rem;
+    }
+}
+
+.calendar-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.calendar {
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.nav-btn {
+    background: #8bc34a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.date, .empty {
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.date:hover {
+    background: #8bc34a;
+    color: white;
+}
+.selected {
+    background: #8bc34a;
+    color: white;
+}
+.reserva-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #8bc34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 /* Footer */

@@ -221,3 +221,64 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+//Script del calendario
+document.addEventListener("DOMContentLoaded", () => {
+    const calendar = document.getElementById("calendar");
+    const currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+
+    function generateCalendar(month, year) {
+        const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        const daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+        let html = `<div class="calendar-header">
+                        <button id="prevMonth" class="nav-btn">◀</button>
+                        <span>${months[month]} ${year}</span>
+                        <button id="nextMonth" class="nav-btn">▶</button>
+                    </div>`;
+
+        html += '<div class="days">' + daysOfWeek.map(day => `<div>${day}</div>`).join("") + '</div>';
+        html += '<div class="dates">';
+
+        for (let i = 0; i < firstDay; i++) {
+            html += '<div class="empty"></div>';
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const isToday = day === currentDate.getDate() && month === currentDate.getMonth() && year === currentDate.getFullYear();
+            html += `<div class="date ${isToday ? 'selected' : ''}" data-day="${day}">${day}</div>`;
+        }
+
+        html += '</div>';
+
+        calendar.innerHTML = html;
+
+        document.querySelectorAll(".date").forEach(date => {
+            date.addEventListener("click", () => {
+                document.querySelectorAll(".date").forEach(d => d.classList.remove("selected"));
+                date.classList.add("selected");
+            });
+        });
+
+        document.getElementById("prevMonth").addEventListener("click", () => changeMonth(-1));
+        document.getElementById("nextMonth").addEventListener("click", () => changeMonth(1));
+    }
+
+    function changeMonth(direction) {
+        currentMonth += direction;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        } else if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        generateCalendar(currentMonth, currentYear);
+    }
+
+    generateCalendar(currentMonth, currentYear);
+});
