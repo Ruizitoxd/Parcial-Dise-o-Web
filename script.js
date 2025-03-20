@@ -159,3 +159,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const foodImages = document.querySelectorAll(".food-item img");
+
+    // Crear el overlay para la imagen en pantalla completa
+    const overlay = document.createElement("div");
+    overlay.classList.add("fullscreen-overlay");
+    overlay.innerHTML = `<img src="" alt="Imagen ampliada">`;
+    document.body.appendChild(overlay);
+
+    const overlayImage = overlay.querySelector("img");
+
+    foodImages.forEach(img => {
+        img.addEventListener("click", () => {
+            overlayImage.src = img.src;
+            overlay.classList.add("active");
+        });
+    });
+
+    // Cerrar la imagen al hacer clic en cualquier parte del overlay
+    overlay.addEventListener("click", () => {
+        overlay.classList.remove("active");
+    });
+});
