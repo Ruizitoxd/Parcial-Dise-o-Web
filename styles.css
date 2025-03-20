@@ -1102,4 +1102,46 @@ p {
     border-radius: 6px;
     cursor: pointer;
     margin-top: 8px;
+
 }
+
+/* Clase para el fondo oscuro */
+.fondo-oscuro {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 68%, rgba(0, 0, 0, 0.5) 100%),
+        radial-gradient(farthest-corner at 90% 10%, #694427, black);
+    color: white;
+    /* Color del texto en fondo oscuro */
+}
+
+/* Estilos del slider oscuro */
+.slider-oscuro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #8bc34a;
+    /* Color normal (verde) */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Posiciones del slider */
+.left {
+    transform: translateX(0%);
+}
+
+.right {
+    transform: translateX(100%);
+}
+
+/* Cambiar el color del slider en modo oscuro */
+.fondo-oscuro .slider-oscuro {
+    background-color: #93b786;
+    /* Color para el modo oscuro */
+}
+
+/* Botones en modo oscuro */
+.fondo-oscuro .reserva-btn {
+    background-color: #93b786;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */

@@ -163,7 +163,7 @@ function toggleButtons(selected) {
         btn2.classList.add("active");
         btn1.classList.remove("active");
     }
-}
+  }
 
 //Código para acomodar el modal de las imagenes de platos principales.
 document.addEventListener("DOMContentLoaded", function () {
@@ -336,9 +336,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
 //Script del calendario
 document.addEventListener("DOMContentLoaded", () => {
     const calendar = document.getElementById("calendar");
@@ -400,8 +397,28 @@ document.addEventListener("DOMContentLoaded", () => {
     generateCalendar(currentMonth, currentYear);
 });
 
-window.addEventListener("scroll", function () {
-    let scrollY = window.scrollY;
-    let newSize = 100 + (scrollY / 100); // Tamaño inicial - Ajusta la velocidad del zoom
-    document.querySelector(".GastronomiaAutentica").style.backgroundSize = `${newSize}%`;
+//cambiar fondo de reserva
+document.addEventListener("DOMContentLoaded", function () {
+    const btnAlmuerzo = document.getElementById("btn-almuerzo");
+    const btnCena = document.getElementById("btn-cena");
+    const divReserva = document.getElementById("Reserva");
+    const sliderOscuro = document.querySelector(".slider-oscuro");
+
+    btnAlmuerzo.addEventListener("click", function () {
+        divReserva.classList.remove("fondo-oscuro");
+        btnAlmuerzo.classList.add("active");
+        btnCena.classList.remove("active");
+        sliderOscuro.classList.remove("right");
+        sliderOscuro.classList.add("left");
+    });
+
+    btnCena.addEventListener("click", function () {
+        divReserva.classList.add("fondo-oscuro");
+        btnCena.classList.add("active");
+        btnAlmuerzo.classList.remove("active");
+        sliderOscuro.classList.remove("left");
+        sliderOscuro.classList.add("right");
+    });
 });
+
+
