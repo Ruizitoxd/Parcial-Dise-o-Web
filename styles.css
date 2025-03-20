@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth; /* Animación suave al scrollear */
 }
@@ -422,17 +421,6 @@ nav ul li a:hover {
     font-size: 4vw;
 }
 
-/* Botón final del formulario */
-.ReservaCardContentContainerButton {
-    background: #93b786;
-    color: white;
-    font-family: "Quattrocento", serif;
-    font-size: 1.5vw;
-    border: none;
-    border-radius: 8px;
-    padding: 0em 1em;
-}
-
 /* Sección de los botones de la cena*/
 .GrupoBotonesTipoCena {
     margin-top: 5%;
@@ -469,7 +457,7 @@ nav ul li a:hover {
     top: 0;
     bottom: 0;
     width: 50%;
-    background-color: #93b786;
+    background-color: #8bc34a;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -675,6 +663,7 @@ nav ul li a:hover {
     align-items: center;
     margin-bottom: 10px;
 }
+
 .nav-btn {
     background: #8bc34a;
     color: white;
@@ -684,24 +673,30 @@ nav ul li a:hover {
     height: 30px;
     cursor: pointer;
 }
+
 .days, .dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
 }
+
 .date, .empty {
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
 }
+
 .date:hover {
-    background: #8bc34a;
+    background: #93b786;
     color: white;
 }
+
 .selected {
-    background: #8bc34a;
+    background: #8bc34a !important; /* Priorizar el color seleccionado sobre el hover*/
     color: white;
 }
+
+/* Botón final del formulario */
 .reserva-btn {
     display: block;
     width: 100%;
