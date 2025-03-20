@@ -208,9 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
         let html = `<div class="calendar-header">
-                        <button id="prevMonth">◀</button>
+                        <button id="prevMonth" class="nav-btn">◀</button>
                         <span>${months[month]} ${year}</span>
-                        <button id="nextMonth">▶</button>
+                        <button id="nextMonth" class="nav-btn">▶</button>
                     </div>`;
 
         html += '<div class="days">' + daysOfWeek.map(day => `<div>${day}</div>`).join("") + '</div>';
