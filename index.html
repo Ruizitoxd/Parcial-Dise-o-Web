@@ -152,7 +152,7 @@
                     <input type="tel" class="form-control form-control-sm" id="telefono">
 
                     <div class="GrupoBotonesTipoCena">
-                        <div class="slider left"></div>
+                        <div class="slider slider-oscuro left"></div>
                         <button id="btn-almuerzo" class="active">Almuerzo</button>
                         <button id="btn-cena">Cena</button>
                     </div>
@@ -171,9 +171,10 @@
                                 </div>
                                 <div class="personas-dropdown-content">
                                     <ul class="personas-dropdown-menu">
-                                        <li>1</li>
-                                        <li>2</li>
-                                        <li>3</li>
+                                        <li data-value="1">1</li>
+                                        <li data-value="2">2</li>
+                                        <li data-value="3">3</li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -211,6 +212,17 @@
 
                     <button class="reserva-btn">Reserva</button>
                 </form>
+            </div>
+        </div>
+
+        <div class="SeccionMesaContainer">
+            <div class="SeccionMesa">
+                <div class="Mesa"><img src="Images/Mesa.png" alt="Imagen_Mesa"></div>
+                <div class="SillaContainer Sillas-0" id="silla-container">
+                    <div class="Silla SillaLeft" id="Left_Seat"><img src="Images/Silla_Lado.png" alt="Left_Seat"></div>
+                    <div class="Silla SillaBack" id="Back_Seat"><img src="Images/Silla.png" alt="Back_Seat"></div>
+                    <div class="Silla SillaRight" id="Right_Seat"><img src="Images/Silla_Lado.png" alt="Right_Seat"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -301,10 +313,12 @@
                     width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+
             </div>
         </div>
     </div>
     <script src="js/imagenExpandida.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </body>

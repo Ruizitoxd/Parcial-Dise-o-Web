@@ -243,7 +243,6 @@ nav ul li a:hover {
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%);
 }
 
-
 /* Botones de navegación */
 .btn-carrousel {
     position: absolute;
@@ -285,8 +284,6 @@ nav ul li a:hover {
     min-width: 300px;
     box-sizing: border-box;
     transition: transform 0.8s ease;
-
-
 }
 
 img {
@@ -349,7 +346,6 @@ img {
     gap: 20px;
 }
 
-
 /* Sección de platos fuertes*/
 .platillo div {
     display: flex;
@@ -362,11 +358,9 @@ img {
 }
 
 
-.marmol {
-    width: 40%;
-    /* Ajusta el ancho de la sección de mármol */
-    height: 100%;
-    /* Permite que la altura se adapte al contenido */
+.marmol{
+    width: 40%; /* Ajusta el ancho de la sección de mármol */
+    height: 100%; /* Permite que la altura se adapte al contenido */
     background: url('Images/Fondo_Marmol.png');
     background-size: cover;
     background-position: center;
@@ -394,7 +388,6 @@ img {
     gap: 20px;
     /* Espacio entre la imagen y el nombre */
 }
-
 
 .food-item img {
     width: 90%;
@@ -473,7 +466,7 @@ img {
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -524,7 +517,7 @@ img {
 
 /* Cambio de input para la caja */
 
-.form-control {
+.form-control{
     font-family: "Quattrocento", serif;
     color: #707070;
     background: transparent;
@@ -765,10 +758,6 @@ img {
     display: block !important;
 }
 
-
-
-
-
 /* Responsividad */
 @media (max-width: 576px) {
     .w-340px {
@@ -780,7 +769,67 @@ img {
     }
 }
 
+/* Contenedor principal */
+.SeccionMesaContainer {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
 
+/* Mesa */
+.Mesa {
+    position: relative;
+    z-index: 2;
+}
+
+/* Contenedor de sillas */
+.SillaContainer {
+    position: absolute;
+    top: 82%; /* Ajuste relativo a la mesa */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%; /* Ajustar según el tamaño de la mesa */
+    height: 250px;
+}
+
+/* Estilo general de las sillas */
+.Silla {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    display: none; /* Ocultar por defecto */
+}
+
+/* Posiciones específicas de las sillas */
+.SillaBack {
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.SillaLeft {
+    left: -75%;
+    top: 50%;
+    width: 150px;
+    height: auto;
+    transform: translateY(-50%);
+}
+
+.SillaRight {
+    right: -75%;
+    top: 50%;
+    width: 150px;
+    height: auto;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* Clases condicionales para mostrar las sillas */
+.Sillas-1 .SillaBack { display: block; }
+.Sillas-2 .SillaLeft, .Sillas-2 .SillaRight { display: block; }
+.Sillas-3 .SillaLeft, .Sillas-3 .SillaBack, .Sillas-3 .SillaRight { display: block; }
 
 /* Footer */
 footer {
@@ -890,7 +939,6 @@ footer {
 .rights {
     font-size: 1vw;
     margin-top: 0.5vw;
-
 }
 
 /* Centrar el contenido del offcanvas */
@@ -936,7 +984,6 @@ footer {
 .icon-container {
     align-items: center;
 }
-
 
 /* Estilo del mapa */
 iframe {
@@ -1103,3 +1150,46 @@ p {
     cursor: pointer;
     margin-top: 8px;
 }
+
+/* Clase para el fondo oscuro */
+.fondo-oscuro {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 68%, rgba(0, 0, 0, 0.5) 100%),
+        radial-gradient(farthest-corner at 90% 10%, #694427, black);
+    color: white;
+    /* Color del texto en fondo oscuro */
+}
+
+/* Estilos del slider oscuro */
+.slider-oscuro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #8bc34a;
+    /* Color normal (verde) */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Posiciones del slider */
+.left {
+    transform: translateX(0%);
+}
+
+.right {
+    transform: translateX(100%);
+}
+
+/* Cambiar el color del slider en modo oscuro */
+.fondo-oscuro .slider-oscuro {
+    background-color: #93b786;
+    /* Color para el modo oscuro */
+}
+
+/* Botones en modo oscuro */
+.fondo-oscuro .reserva-btn {
+    background-color: #93b786;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+}
+

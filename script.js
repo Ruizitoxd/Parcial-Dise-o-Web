@@ -163,7 +163,7 @@ function toggleButtons(selected) {
         btn2.classList.add("active");
         btn1.classList.remove("active");
     }
-}
+  }
 
 //Código para acomodar el modal de las imagenes de platos principales.
 document.addEventListener("DOMContentLoaded", function () {
@@ -336,9 +336,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
 //Script del calendario
 document.addEventListener("DOMContentLoaded", () => {
     const calendar = document.getElementById("calendar");
@@ -400,8 +397,76 @@ document.addEventListener("DOMContentLoaded", () => {
     generateCalendar(currentMonth, currentYear);
 });
 
+
+//cambiar fondo de reserva
+document.addEventListener("DOMContentLoaded", function () {
+    const btnAlmuerzo = document.getElementById("btn-almuerzo");
+    const btnCena = document.getElementById("btn-cena");
+    const divReserva = document.getElementById("Reserva");
+    const sliderOscuro = document.querySelector(".slider-oscuro");
+
+    btnAlmuerzo.addEventListener("click", function () {
+        divReserva.classList.remove("fondo-oscuro");
+        btnAlmuerzo.classList.add("active");
+        btnCena.classList.remove("active");
+        sliderOscuro.classList.remove("right");
+        sliderOscuro.classList.add("left");
+    });
+
+    btnCena.addEventListener("click", function () {
+        divReserva.classList.add("fondo-oscuro");
+        btnCena.classList.add("active");
+        btnAlmuerzo.classList.remove("active");
+        sliderOscuro.classList.remove("left");
+        sliderOscuro.classList.add("right");
+    });
+});
+
+
+
 window.addEventListener("scroll", function () {
     let scrollY = window.scrollY;
     let newSize = 100 + (scrollY / 100); // Tamaño inicial - Ajusta la velocidad del zoom
     document.querySelector(".GastronomiaAutentica").style.backgroundSize = `${newSize}%`;
 });
+
+//Desplegar sillas según la opción
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionar el dropdown de personas
+    const dropdownPersonas = document.querySelector(".calendarioDropdown .personas-dropdown");
+    const inputPersonas = dropdownPersonas.querySelector(".personas-dropdown-input");
+    const opcionesPersonas = dropdownPersonas.querySelectorAll(".personas-dropdown-menu li");
+    const sillaContainer = document.getElementById("silla-container");
+
+    // Mostrar/Ocultar el menú de personas
+    dropdownPersonas.addEventListener("click", function () {
+        dropdownPersonas.classList.toggle("open");
+    });
+
+    // Asignar evento de selección a cada opción del dropdown de personas
+    opcionesPersonas.forEach(opcion => {
+        opcion.addEventListener("click", function () {
+            let valor = this.getAttribute("data-value");
+
+            if (!valor) return; // Prevenir errores si no hay data-value
+
+            // Actualizar el input con el número seleccionado
+            inputPersonas.value = valor;
+
+            // Cambiar la clase del contenedor de sillas
+            sillaContainer.classList.remove("Sillas-0", "Sillas-1", "Sillas-2", "Sillas-3");
+            sillaContainer.classList.add(`Sillas-${valor}`);
+
+            // Cerrar el dropdown después de seleccionar
+            dropdownPersonas.classList.remove("open");
+        });
+    });
+
+    // Cerrar el menú si se hace clic fuera del dropdown
+    document.addEventListener("click", function (event) {
+        if (!dropdownPersonas.contains(event.target)) {
+            dropdownPersonas.classList.remove("open");
+        }
+    });
+});
+
