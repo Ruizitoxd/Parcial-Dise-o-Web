@@ -404,6 +404,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnCena = document.getElementById("btn-cena");
     const divReserva = document.getElementById("Reserva");
     const sliderOscuro = document.querySelector(".slider-oscuro");
+    const mesa = document.querySelector(".Mesa img"); // Asegurarse de seleccionar la imagen de la mesa
+    const sillas = document.querySelectorAll(".Silla img"); // Selecciona todas las imágenes de sillas
+    const lamparaContainer = document.getElementById("lampara-container"); 
 
     btnAlmuerzo.addEventListener("click", function () {
         divReserva.classList.remove("fondo-oscuro");
@@ -411,6 +414,14 @@ document.addEventListener("DOMContentLoaded", function () {
         btnCena.classList.remove("active");
         sliderOscuro.classList.remove("right");
         sliderOscuro.classList.add("left");
+
+        // Remover sombra si está en almuerzo
+        mesa?.classList.remove("oscurecer");
+        sillas.forEach(silla => silla?.classList.remove("oscurecer"));
+
+        //Animación de lampara cayendo
+        lamparaContainer.style.opacity = "0";
+        lamparaContainer.style.pointerEvents = "none"; // Para evitar interacción
     });
 
     btnCena.addEventListener("click", function () {
@@ -419,10 +430,21 @@ document.addEventListener("DOMContentLoaded", function () {
         btnAlmuerzo.classList.remove("active");
         sliderOscuro.classList.remove("left");
         sliderOscuro.classList.add("right");
+
+        // Agregar sombra en cena
+        mesa?.classList.add("oscurecer");
+        sillas.forEach(silla => silla?.classList.add("oscurecer"));
+
+        // Mostrar lámpara con animación
+        lamparaContainer.style.opacity = "1";
+        lamparaContainer.style.pointerEvents = "auto"; 
+
+        // Forzar la reanimación eliminando y agregando la clase
+        lamparaContainer.classList.remove("animar-lampara");
+        void lamparaContainer.offsetWidth; // Truco para reiniciar la animación
+        lamparaContainer.classList.add("animar-lampara");
     });
 });
-
-
 
 window.addEventListener("scroll", function () {
     let scrollY = window.scrollY;
