@@ -81,7 +81,10 @@ nav ul li a:hover {
 }
 
 .Inicio {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 68%, rgba(0, 0, 0, 0) 100%), url(Images/Main_Image.jpg);
+    background-image: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.5) 68%,
+            rgba(0, 0, 0, 0) 100%),
+        url(Images/Main_Image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -118,7 +121,10 @@ nav ul li a:hover {
 }
 
 .AtmosferaDivider {
-    background-image: linear-gradient(180deg, rgb(221, 221, 221, 0.5) 68%, rgb(221, 221, 221, 0.5) 100%), url(Images/Fondo_Marmol.png);
+    background-image: linear-gradient(180deg,
+            rgb(221, 221, 221, 0.5) 68%,
+            rgb(221, 221, 221, 0.5) 100%),
+        url(Images/Fondo_Marmol.png);
     height: 40vh;
     padding: 5vw;
     display: flex;
@@ -208,7 +214,7 @@ nav ul li a:hover {
 
 /* Cambios de la fuente */
 .GastronomiaAutenticaDescripcion p {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Times New Roman", Times, serif;
     font-size: 1.5vw;
     padding: 5%;
     margin-left: 5%;
@@ -222,7 +228,6 @@ nav ul li a:hover {
     height: 100vh;
     position: relative;
 }
-
 
 .Menu-titulo {
     font-family: "Quattrocento", serif;
@@ -240,7 +245,10 @@ nav ul li a:hover {
     margin-bottom: 200px;
 
     /* Gradiente para efecto de desvanecido */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0) 0%,
+            black 50%,
+            rgba(0, 0, 0, 0) 100%);
 }
 
 /* Botones de navegación */
@@ -330,7 +338,7 @@ img {
 }
 
 .dot.active {
-    background: #4CAF50;
+    background: #4caf50;
 }
 
 .platillo {
@@ -357,11 +365,12 @@ img {
     /* Define un ancho para la sección de cada platillo */
 }
 
-
-.marmol{
-    width: 40%; /* Ajusta el ancho de la sección de mármol */
-    height: 100%; /* Permite que la altura se adapte al contenido */
-    background: url('Images/Fondo_Marmol.png');
+.marmol {
+    width: 40%;
+    /* Ajusta el ancho de la sección de mármol */
+    height: 100%;
+    /* Permite que la altura se adapte al contenido */
+    background: url("Images/Fondo_Marmol.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -397,7 +406,6 @@ img {
     border-radius: 15px;
 }
 
-
 .food-item img:hover {
     transform: translateY(-5px);
 }
@@ -410,7 +418,7 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('Images/Buffet_Italiano.jpg');
+    background: url("Images/Buffet_Italiano.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -468,12 +476,15 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.5s ease-in-out, filter 0.5s ease-in-out;
 }
 
 /* Sección exterior de la carta de reserva */
 .ReservaCardContainer {
     position: relative;
-    background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(Images/Fondo_Marmol.png);
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0.7) 100%),
+        url(Images/Fondo_Marmol.png);
     padding: 1.5em;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     height: 85%;
@@ -499,7 +510,9 @@ img {
 }
 
 .ReservaCardContainer h1 {
-    background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(Images/Fondo_Marmol.png);
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 0%,
+            rgba(255, 255, 255, 0.7) 100%),
+        url(Images/Fondo_Marmol.png);
     position: absolute;
     top: 1%;
     left: 50%;
@@ -517,7 +530,7 @@ img {
 
 /* Cambio de input para la caja */
 
-.form-control{
+.form-control {
     font-family: "Quattrocento", serif;
     color: #707070;
     background: transparent;
@@ -769,6 +782,123 @@ img {
     }
 }
 
+.LinternaContenedor {
+    position: relative;
+    top: -100%;
+    left: 30%;
+}
+
+/* Cuerda de la lámpara */
+.cuerda {
+    width: 2px;
+    background: #555;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: estirar 0.8s cubic-bezier(0.7, 0, 1, 1) forwards, retraer 0.6s cubic-bezier(0.25, 1.2, 0.5, 1) 0.8s forwards;
+}
+
+/* Cono de la lámpara (doble de tamaño y negro) */
+.cono {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent;
+    /* Lados del cono (duplicado) */
+    border-right: 90px solid transparent;
+    /* Lados del cono (duplicado) */
+    border-bottom: 140px solid #000;
+    /* Cono negro (duplicado) */
+    z-index: 2;
+    /* Encima de la esfera */
+    margin-top: 40px;
+    /* Ajustado para que quede a la mitad */
+    animation: caer 0.8s cubic-bezier(0.7, 0, 1, 1) forwards,
+        rebote 0.6s cubic-bezier(0.25, 1.2, 0.5, 1) 0.8s forwards;
+}
+
+/* Esfera (luz) de la lámpara */
+.lampara {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #fff7b3 20%, #8bc34a 80%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -170%);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 255, 153, 0.8);
+    margin-top: 140px;
+    /* Ajustado para que quede debajo del cono */
+    animation: caer 0.8s cubic-bezier(0.7, 0, 1, 1) forwards,
+        rebote 0.6s cubic-bezier(0.25, 1.2, 0.5, 1) 0.8s forwards;
+}
+
+/* Animación de la caída */
+@keyframes caer {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 35vh;
+    }
+}
+
+/* Animación de estiramiento de la cuerda */
+@keyframes estirar {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 35vh;
+    }
+}
+
+/* Animación del rebote suave */
+@keyframes rebote {
+    0% {
+        top: 35vh;
+    }
+
+    50% {
+        top: 30vh;
+        /* Rebote hacia arriba */
+    }
+
+    100% {
+        top: 33vh;
+        /* Posición final */
+    }
+}
+
+/* Retracción de la cuerda con el rebote */
+@keyframes retraer {
+    0% {
+        height: 35vh;
+    }
+
+    50% {
+        height: 30vh;
+    }
+
+    100% {
+        height: 33vh;
+    }
+}
+
+#lampara-container {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.animar-lampara .lampara {
+    animation: caer 0.8s cubic-bezier(0.7, 0, 1, 1) forwards,
+               rebote 0.6s cubic-bezier(0.25, 1.2, 0.5, 1) 0.8s forwards;
+}
+
 /* Contenedor principal */
 .SeccionMesaContainer {
     height: 100vh;
@@ -781,55 +911,76 @@ img {
 
 /* Mesa */
 .Mesa {
+    width: 150%;
     position: relative;
+    left: 50%;
+    transform: translate(-50%);
     z-index: 2;
 }
 
 /* Contenedor de sillas */
 .SillaContainer {
     position: absolute;
-    top: 82%; /* Ajuste relativo a la mesa */
+    top: 82%;
+    /* Ajuste relativo a la mesa */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20%; /* Ajustar según el tamaño de la mesa */
+    width: 20%;
+    /* Ajustar según el tamaño de la mesa */
     height: 250px;
 }
 
 /* Estilo general de las sillas */
 .Silla {
     position: absolute;
-    width: 100px;
+    width: 200px;
     height: auto;
-    display: none; /* Ocultar por defecto */
+    opacity: 0;
+    /* Ocultas por defecto con opacidad */
+    filter: brightness(1);
+    transition: all 0.5s ease-in-out;
 }
 
 /* Posiciones específicas de las sillas */
 .SillaBack {
-    top: -20%;
+    top: -100%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .SillaLeft {
-    left: -75%;
-    top: 50%;
-    width: 150px;
+    left: -150%;
+    top: 0%;
+    width: 250px;
     height: auto;
     transform: translateY(-50%);
 }
 
 .SillaRight {
-    right: -75%;
-    top: 50%;
-    width: 150px;
+    right: -150%;
+    top: 0%;
+    width: 250px;
     height: auto;
     transform: translateY(-50%) scaleX(-1);
 }
 
-/* Clases condicionales para mostrar las sillas */
-.Sillas-1 .SillaBack { display: block; }
-.Sillas-2 .SillaLeft, .Sillas-2 .SillaRight { display: block; }
-.Sillas-3 .SillaLeft, .Sillas-3 .SillaBack, .Sillas-3 .SillaRight { display: block; }
+/* Clases condicionales con animación */
+.Sillas-1 .SillaBack,
+.Sillas-2 .SillaLeft,
+.Sillas-2 .SillaRight,
+.Sillas-3 .SillaLeft,
+.Sillas-3 .SillaBack,
+.Sillas-3 .SillaRight {
+    display: block;
+    opacity: 1;
+    /* Aparecen suavemente */
+}
+
+/* Sombra aplicada a la mesa y las sillas */
+.oscurecer {
+    transition: filter 0.5s ease-in-out;
+    filter: brightness(0.7);
+}
 
 /* Footer */
 footer {
@@ -958,7 +1109,7 @@ footer {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     /* Color de fondo */
     color: white;
     /* Color del ícono */
@@ -1153,7 +1304,9 @@ p {
 
 /* Clase para el fondo oscuro */
 .fondo-oscuro {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 68%, rgba(0, 0, 0, 0.5) 100%),
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.5) 68%,
+            rgba(0, 0, 0, 0.5) 100%),
         radial-gradient(farthest-corner at 90% 10%, #694427, black);
     color: white;
     /* Color del texto en fondo oscuro */
@@ -1192,4 +1345,3 @@ p {
     color: white;
     /* Color del texto */
 }
-
