@@ -5,7 +5,8 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Animación suave al scrollear */
+    scroll-behavior: smooth;
+    /* Animación suave al scrollear */
 }
 
 /* Estilos generales */
@@ -31,7 +32,8 @@ header {
     left: 0;
     z-index: 1000;
 
-    transition: height 0.3s ease-in-out; /* Transición para el tamaño del header*/
+    transition: height 0.3s ease-in-out;
+    /* Transición para el tamaño del header*/
 }
 
 header .black {
@@ -44,7 +46,8 @@ header img {
     width: 12%;
     margin-left: 5%;
 
-    transition: all 0.3s ease-in-out; /* Transición para el tamaño del header*/
+    transition: all 0.3s ease-in-out;
+    /* Transición para el tamaño del header*/
 }
 
 nav {
@@ -78,7 +81,7 @@ nav ul li a:hover {
 }
 
 .Inicio {
-    background-image: linear-gradient( 180deg, rgba(0,0,0,0.5) 68%, rgba(0,0,0,0) 100% ), url(Images/Main_Image.jpg);
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 68%, rgba(0, 0, 0, 0) 100%), url(Images/Main_Image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -115,13 +118,14 @@ nav ul li a:hover {
 }
 
 .AtmosferaDivider {
-    background-image: linear-gradient( 180deg, rgb(221, 221, 221, 0.5) 68%, rgb(221, 221, 221, 0.5) 100% ), url(Images/Fondo_Marmol.png);
+    background-image: linear-gradient(180deg, rgb(221, 221, 221, 0.5) 68%, rgb(221, 221, 221, 0.5) 100%), url(Images/Fondo_Marmol.png);
     height: 40vh;
     padding: 5vw;
     display: flex;
     justify-content: space-around;
     overflow: hidden;
-    box-shadow:inset 0px 16px 18px 0px rgba(63,63,31,0.3); /*  Sombra Interior del contenedor */
+    box-shadow: inset 0px 16px 18px 0px rgba(63, 63, 31, 0.3);
+    /*  Sombra Interior del contenedor */
     font-family: "Quattrocento";
 }
 
@@ -152,7 +156,8 @@ nav ul li a:hover {
     flex-direction: column;
     align-items: center;
     color: white;
-    box-shadow: 0px 0px 18px 16px rgba(63,63,31,0.3); /* Sombra exterior del contenedor*/
+    box-shadow: 0px 0px 18px 16px rgba(63, 63, 31, 0.3);
+    /* Sombra exterior del contenedor*/
 }
 
 /* Contenedor para distribuir espacio */
@@ -175,7 +180,7 @@ nav ul li a:hover {
 }
 
 /* Cambios de la fuente */
-.GastronomiaAutenticaTitulo h2{
+.GastronomiaAutenticaTitulo h2 {
     font-family: "Quattrocento", serif;
     font-weight: bold;
     font-size: 3vw;
@@ -202,7 +207,7 @@ nav ul li a:hover {
 }
 
 /* Cambios de la fuente */
-.GastronomiaAutenticaDescripcion p{
+.GastronomiaAutenticaDescripcion p {
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.5vw;
     padding: 5%;
@@ -219,18 +224,21 @@ nav ul li a:hover {
 }
 
 
-.Menu-titulo{
+.Menu-titulo {
     font-family: "Quattrocento", serif;
     font-size: 5vw;
 }
 
-.linea{
-    width: 95%; /* Ajusta el largo de la línea */
-    height: 3px;  /* Grosor de la línea */
-    margin: 0 auto; /* Centrar la línea */
+.linea {
+    width: 95%;
+    /* Ajusta el largo de la línea */
+    height: 3px;
+    /* Grosor de la línea */
+    margin: 0 auto;
+    /* Centrar la línea */
     margin-top: 40px;
     margin-bottom: 200px;
-    
+
     /* Gradiente para efecto de desvanecido */
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%);
 }
@@ -270,15 +278,15 @@ nav ul li a:hover {
     display: flex;
     transition: transform 0.8s ease;
     gap: 50px;
-    transform: translate(0,-10%);
+    transform: translate(0, -10%);
 }
 
 .item {
     min-width: 300px;
     box-sizing: border-box;
     transition: transform 0.8s ease;
-   
-    
+
+
 }
 
 img {
@@ -287,7 +295,8 @@ img {
 }
 
 /* Botones de navegación */
-#prevBtn, #nextBtn {
+#prevBtn,
+#nextBtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -299,8 +308,13 @@ img {
     z-index: 10;
 }
 
-#prevBtn { left: 10px; }
-#nextBtn { right: 10px; }
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
 
 /* Dots de navegación */
 .dots-container {
@@ -328,7 +342,8 @@ img {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea los elementos a la derecha */
+    align-items: flex-end;
+    /* Alinea los elementos a la derecha */
     justify-content: center;
     color: black;
     gap: 20px;
@@ -340,41 +355,50 @@ img {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px; /* Espacio entre la imagen y el texto */
-    width: 42%; /* Define un ancho para la sección de cada platillo */
+    gap: 10px;
+    /* Espacio entre la imagen y el texto */
+    width: 42%;
+    /* Define un ancho para la sección de cada platillo */
 }
 
 
-.marmol{
-    width: 40%; /* Ajusta el ancho de la sección de mármol */
-    height: 100%; /* Permite que la altura se adapte al contenido */
+.marmol {
+    width: 40%;
+    /* Ajusta el ancho de la sección de mármol */
+    height: 100%;
+    /* Permite que la altura se adapte al contenido */
     background: url('Images/Fondo_Marmol.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    flex-direction: column; /* Alinea los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    gap: 15px; /* Espaciado entre los elementos */
+    flex-direction: column;
+    /* Alinea los elementos en columna */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    gap: 15px;
+    /* Espaciado entre los elementos */
 }
 
-.food-item h4{
+.food-item h4 {
     font-size: 350%;
 }
 
-.food-item h2{
+.food-item h2 {
     font-size: 260%;
 }
 
 .food-item {
     display: flex;
     align-items: center;
-    gap: 20px; /* Espacio entre la imagen y el nombre */
+    gap: 20px;
+    /* Espacio entre la imagen y el nombre */
 }
 
 
 .food-item img {
-    width: 90%; /* Ajusta el tamaño de la imagen */
+    width: 90%;
+    /* Ajusta el tamaño de la imagen */
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
     border-radius: 15px;
@@ -409,7 +433,8 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    background: rgba(0, 0, 0, 0.8);
+    /* Fondo oscuro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -455,7 +480,7 @@ img {
 /* Sección exterior de la carta de reserva */
 .ReservaCardContainer {
     position: relative;
-    background: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% ),url(Images/Fondo_Marmol.png);
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(Images/Fondo_Marmol.png);
     padding: 1.5em;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     height: 85%;
@@ -481,7 +506,7 @@ img {
 }
 
 .ReservaCardContainer h1 {
-    background: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% ),url(Images/Fondo_Marmol.png);
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.7) 100%), url(Images/Fondo_Marmol.png);
     position: absolute;
     top: 1%;
     left: 50%;
@@ -499,12 +524,12 @@ img {
 
 /* Cambio de input para la caja */
 
-.form-control{
+.form-control {
     font-family: "Quattrocento", serif;
     color: #707070;
     background: transparent;
-    border:none;
-    border-bottom:2px solid !important;
+    border: none;
+    border-bottom: 2px solid !important;
 }
 
 /* Sección de los botones de la cena*/
@@ -520,7 +545,8 @@ img {
 
 /* Estilo de los botones */
 .GrupoBotonesTipoCena button {
-    flex: 1; /* Hace que los botones ocupen el mismo espacio */
+    flex: 1;
+    /* Hace que los botones ocupen el mismo espacio */
     padding: 15px;
     font-size: 18px;
     border: none;
@@ -537,7 +563,7 @@ img {
     color: white;
 }
 
- /* Barra deslizante */
+/* Barra deslizante */
 .slider {
     position: absolute;
     top: 0;
@@ -567,21 +593,29 @@ img {
     width: inherit;
 }
 
-/* Personalización de los dropdown de personas y hora */
-.mi-dropdown {
-    position: relative;
-    width: 40%;
+/* Contenedor principal para ambos dropdowns */
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
 }
 
-.mi-dropdown-container {
+/* ======== Dropdown de Personas ======== */
+.personas-dropdown {
+    position: relative;
+    width: 90%;
+}
+
+.personas-dropdown-container {
     display: flex;
+    margin-bottom: 5%;
     align-items: center;
     border: 1px solid gray;
     overflow: hidden;
     background-color: white;
 }
 
-.mi-dropdown-button {
+.personas-dropdown-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -593,18 +627,18 @@ img {
     position: relative;
 }
 
-.mi-dropdown-button i {
+.personas-dropdown-button i {
     font-size: 18px;
-    color: #707070;;
+    color: #707070;
 }
 
-.mi-dropdown-button .arrow {
+.personas-dropdown-button .arrow {
     font-size: 12px;
     margin-left: 5px;
     color: #707070;
 }
 
-.mi-dropdown-input {
+.personas-dropdown-input {
     border: none;
     padding: 10px;
     width: 100%;
@@ -613,7 +647,7 @@ img {
     text-align: center;
 }
 
-.mi-dropdown-content {
+.personas-dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
@@ -622,29 +656,116 @@ img {
     width: 100%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    display: none; /* Se oculta por defecto */
+    display: none;
 }
 
-.mi-dropdown-menu {
+.personas-dropdown-menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.mi-dropdown-menu li {
+.personas-dropdown-menu li {
     padding: 10px;
     cursor: pointer;
     text-align: center;
 }
 
-.mi-dropdown-menu li:hover {
+.personas-dropdown-menu li:hover {
     background: lightgray;
 }
 
-/* Clase para mostrar el menú */
-.show-menu {
-    display: block !important; /* Ahora sí se mostrará */
+/* Mostrar el menú desplegable */
+.personas-show-menu {
+    display: block !important;
 }
+
+/* ======== Dropdown de Horas ======== */
+.hora-dropdown {
+    position: relative;
+    width: 90%;
+}
+
+.hora-dropdown-container {
+    display: flex;
+    margin-bottom: 5%;
+    align-items: center;
+    border: 1px solid gray;
+    overflow: hidden;
+    background-color: white;
+}
+
+.hora-dropdown-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    background: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.hora-dropdown-button i {
+    font-size: 18px;
+    color: #707070;
+}
+
+.hora-dropdown-button .arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #707070;
+}
+
+.hora-dropdown-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    flex: 1;
+    outline: none;
+    text-align: center;
+}
+
+.hora-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid gray;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none;
+}
+
+.hora-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hora-dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hora-dropdown-menu li:hover {
+    background: lightgray;
+}
+
+/* Mostrar el menú desplegable */
+.hora-show-menu {
+    display: block !important;
+}
+
+/* Mostrar cualquier dropdown al hacer clic */
+.show-menu {
+    display: block !important;
+}
+
+
 
 
 
@@ -774,67 +895,79 @@ footer {
 
 /* Centrar el contenido del offcanvas */
 .offcanvas-body {
-    display: flex;                
-    flex-direction: column;       
-    justify-content: left;      
-    align-items: center;          
-    text-align: left;           
-    height: 100%;                 
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    height: 100%;
 }
 
 /* Botón de llamada (Teléfono) */
 .call-button,
 .email-button {
-    display: flex;                
-    align-items: center;          
-    justify-content: center;      
-    text-decoration: none;        
-    background-color: #4CAF50;    /* Color de fondo */
-    color: white;                 /* Color del ícono */
-    border-radius: 25px;          /* Bordes redondeados */
-    width: 150px;                 /* Ancho del botón */
-    height: 50px;                 /* Alto del botón */
-    margin: 20px 0;               /* Espaciado */
-    font-size: 18px;              /* Tamaño del texto */
-    transition: background 0.3s;  /* Animación suave */          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    /* Color de fondo */
+    color: white;
+    /* Color del ícono */
+    border-radius: 25px;
+    /* Bordes redondeados */
+    width: 150px;
+    /* Ancho del botón */
+    height: 50px;
+    /* Alto del botón */
+    margin: 20px 0;
+    /* Espaciado */
+    font-size: 18px;
+    /* Tamaño del texto */
+    transition: background 0.3s;
+    /* Animación suave */
 }
 
 .call-button:hover {
-    background-color: #409143;    /* Color al pasar el mouse */
+    background-color: #409143;
+    /* Color al pasar el mouse */
 }
 
-.icon-container{
+.icon-container {
     align-items: center;
 }
 
 
 /* Estilo del mapa */
 iframe {
-    margin: 20px 0;               
-    border-radius: 10px;          
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
 .email-button:hover {
-    background-color: #409143;   
+    background-color: #409143;
 }
 
 /* Texto "Message Here" en blanco */
 .wixui-rich-text__text {
-    color: white !important;     
+    color: white !important;
 }
 
 /* Ajuste de títulos y párrafos */
-h1, h2, h4 {
-    margin: 10px 0;              
+h1,
+h2,
+h4 {
+    margin: 10px 0;
 }
 
 p {
-    margin: 5px 0;               
+    margin: 5px 0;
 }
 
- /* Estilo del contenedor principal */
+/* Estilo del contenedor principal */
 .w-340px {
-    width: 200px; /* Reducir el ancho del calendario */
+    width: 200px;
+    /* Reducir el ancho del calendario */
 }
 
 /* Calendario */
@@ -939,19 +1072,22 @@ p {
     cursor: pointer;
 }
 
-.days, .dates {
+.days,
+.dates {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 2px;
 }
 
-.date, .empty {
+.date,
+.empty {
     padding: 6px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.date:hover, .selected {
+.date:hover,
+.selected {
     background: #8bc34a;
     color: white;
 }
