@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +11,18 @@
     <!-- Link a la hoja de estilos -->
     <link rel="stylesheet" href="styles.css">
     <!-- Link de la fuentes -->
-    <!-- Quattrocento y Gothic One Family-->
+    <!-- Quattrocento, Gothic One Family y Birthstone-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Pathway+Gothic+One&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Scripts para iconos -->
+    <script src="https://kit.fontawesome.com/6de3140e6e.js" crossorigin="anonymous"></script>
+    <!-- Script para la página web -->
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+    <!-- Encabezado de la página -->
     <header>
         <!--Logo de la página-->
         <img src="Images/Delicato_Logo.png" alt="Delicato Logo">
@@ -33,7 +40,6 @@
             </ul>
         </nav>
     </header>
-    <script src="script.js" defer></script>
 
     <!-- Imagen de inicio principal -->
     <div id="Inicio" class="Inicio">
@@ -43,14 +49,15 @@
             <h2>Restaurante</h2>
         </div>
     </div>
-    
+
     <!-- Sección de Nosotros -->
     <div id="Nosotros">
         <!-- Divisor de MICHELIN -->
         <div class="AtmosferaDivider">
             <div class="AtmosferaTexto">
                 <h2>Atmósfera Fascinante</h2>
-                <p>El Restaurante Delicato es ideal para sus momentos más importantes, para una cena romántica o para un almuerzo familiar.</p>
+                <p>El Restaurante Delicato es ideal para sus momentos más importantes, para una cena romántica o para un
+                    almuerzo familiar.</p>
             </div>
             <img src="Images/MICHELIN-2025_Selected_E-label_Logo.png" alt="Estrella MICHELIN">
         </div>
@@ -64,15 +71,18 @@
             </div>
             <div class="GastronomiaAutenticaDescripcionContainer">
                 <div class="GastronomiaAutenticaDescripcion">
-                    <p>Un auténtico proyecto gastronómico, una cocina básica sostenible que nace del amor por nuestro territorio, ingredientes tradicionales procesados con maestría a través de técnicas de cocina contemporáneas.
-                    Cocina de proximidad y memoria gastronómica, sin excesos estilísticos.</p>
+                    <p>Un auténtico proyecto gastronómico, una cocina básica sostenible que nace del amor por nuestro
+                        territorio, ingredientes tradicionales procesados con maestría a través de técnicas de cocina
+                        contemporáneas.
+                        Cocina de proximidad y memoria gastronómica, sin excesos estilísticos.</p>
                 </div>
             </div>
         </div>
     </div>
-  
+
     <!-- Sección de Carrusel-->
     <div class="Menu" id="Menu">
+
       <h1 class="Menu-titulo">Nuestros Platos</h1>
       <div class="linea"></div>
 
@@ -98,76 +108,145 @@
       <!-- Indicadores (dots) -->
       <div class="dots" id="dots"></div>
   </div>
-  
+       
 
-  <div class="platillo">
-        <div class="marmol">
-            <div class="Carbonara"><h2> Spaghetti alla Carbonara <img src="Images/Carbonara.jpg" alt="Pasta carboanra"></h2></div>
-            <div class="Ossobuco"><h2>Ossobuco alla Milanese <img src="Images/Ossobuco.jpg" alt="Ossobuco"></h2></div>
-            <div class="Fettuccine"><h2>Fettuccine Alfredo <img src="Images/Fettuccine.jpg" alt="Fettuccine"></h2></div>
-            <div class="Pollo"><h2>Pollo al Marsala <img src="Images/Pollo al Marsala.jpg" alt="Pollo"></h2></div>
+    <div class="Platillo">
+        <div class="Marmol">
+            <div class="Carbonara">
+                <h2> Spaghetti alla Carbonara <img src="Images/Carbonara.jpg" alt="Pasta carboanra"></h2>
+            </div>
+            <div class="Ossobuco">
+                <h2>Ossobuco alla Milanese <img src="Images/Ossobuco.jpg" alt="Ossobuco"></h2>
+            </div>
+            <div class="Fettuccine">
+                <h2>Fettuccine Alfredo <img src="Images/Fettuccine.jpg" alt="Fettuccine"></h2>
+            </div>
+            <div class="Pollo">
+                <h2>Pollo al Marsala <img src="Images/Pollo al Marsala.jpg" alt="Pollo"></h2>
+            </div>
         </div>
-        
-  </div>
 
-
-  <div class="container">
-    <div class="dropdowns">
-        <select id="personas">
-            <option>👥</option>
-        </select>
-        <select id="horas">
-            <option>⏰</option>
-        </select>
     </div>
 
-    <div class="calendar" id="calendar"></div>
+    <!-- Sección de reserva -->
+    <div id="Reserva" class="Reserva">
+        <div class="ReservaCardContainer">
+            <div class="ReservaCardContentContainer">
+                <!-- Inicio de la reserva -->
+                <h1>DELICATO</h1>
+                <h3>Reserva con Nosotros</h3>
 
-    <button class="reserva-btn">Reserva</button>
-</div>
-  
-  
-  
+                <!-- Formulario para la reserva -->
+                <form>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control form-control-sm" id="nombre">
 
-  <script src="script.js"></script>
+                    <label for="email">Correo</label>
+                    <input type="text" class="form-control form-control-sm" id="email">
 
-  <!-- Sección del footer-->
-  <footer>
-      <div class="footer-container">
-          <!-- Logo izquierda -->
-          <div class="logo">
-              <h2>DELICATO <img src="Images/Bandera italia.png" alt="Bandera de italia"></h2>
-              <h3>RISTORANTE</h3>
-          </div>
+                    <label for="telefono">Teléfono</label>
+                    <input type="email" class="form-control form-control-sm" id="telefono">
 
-          <!-- Informacion de contacto -->
-          <div class="info-container">
-              <div class="contact-info">
-                  <h4>Direccion</h4>
-                  <p>Via Umberto I, 2 02043 – Contigliano (Rieti)</p>
-              </div>
-              <div class="contact-info">
-                  <h4>EMAIL</h4>
-                  <p>info@ristorantedelicato.it</p>
-                  <h4>TELEPHONE</h4>
-                  <p>+39 0746249202</p>
-              </div>
-          </div>
+                    <div class="GrupoBotonesTipoCena">
+                        <div class="slider left"></div>
+                        <button id="btn-almuerzo" class="active">Almuerzo</button>
+                        <button id="btn-cena">Cena</button>
+                    </div>
 
-          <!-- Redes sociales -->
-          <div class="social-container">
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-          </div>
-      </div>
+                    <!-- Div para acomodar la reserva de la fecha -->
+                    <div class="calendarioDropdown">
+                        <div class="dropdownContainer">
+                            <!-- Dropdown de personas -->
+                            <div class="mi-dropdown">
+                                <div class="mi-dropdown-container">
+                                    <button class="mi-dropdown-button">
+                                        <i class="fas fa-users"></i>
+                                        <span class="arrow">&#9660;</span>
+                                    </button>
+                                    <input type="text" class="mi-dropdown-input" placeholder="Personas">
+                                </div>
+                                <div class="mi-dropdown-content">
+                                    <ul class="mi-dropdown-menu">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-      <div class="footer-bottom">
-          <p class="footer-text"><em>Rispetto per il territorio</em></p>
-          <p class="rights">Todos los derechos reservados | Delicato@</p> 
-      </div>  
-  </footer>
+                            <!-- Dropdown de horas -->
+                            <div class="mi-dropdown">
+                                <div class="mi-dropdown-container">
+                                    <button class="mi-dropdown-button">
+                                        <i class="fa-regular fa-clock"></i>
+                                        <span class="arrow">&#9660;</span>
+                                    </button>
+                                    <input type="text" class="mi-dropdown-input" placeholder="Hora">
+                                </div>
+                                <div class="mi-dropdown-content">
+                                    <ul class="mi-dropdown-menu">
+                                        <li>16:00</li>
+                                        <li>17:00</li>
+                                        <li>18:00</li>
+                                        <li>19:00</li>
+                                        <li>20:00</li>
+                                        <li>21:00</li>
+                                        <li>22:00</li>
+                                        <li>23:00</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasContacto" aria-labelledby="offcanvasContactoLabel">
+                        <!-- Calendario Date Picker -->
+                        <div class="calendar-container">
+                            <div class="calendar" id="calendar"></div>
+                        </div>
+                    </div>
+
+                    <button class="reserva-btn">Reserva</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección del footer-->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo izquierda -->
+            <div class="logo">
+                <h2>DELICATO <img src="Images/Bandera italia.png" alt="Bandera de italia"></h2>
+                <h3>RESTAURANTE</h3>
+            </div>
+
+            <!-- Informacion de contacto -->
+            <div class="info-container">
+                <div class="contact-info">
+                    <h4>Dirección</h4>
+                    <p>Via Umberto I, 2 02043 – Contigliano (Rieti)</p>
+                </div>
+                <div class="contact-info">
+                    <h4>EMAIL</h4>
+                    <p>restaurant@miramar-cambrils.com</p>
+                    <h4>TELÉFONO</h4>
+                    <p>+34 977 36 00 63</p>
+                </div>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="social-container">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-text"><em>Rispetto per il territorio</em></p>
+            <p class="rights">Todos los derechos reservados | Delicato@</p>
+        </div>
+    </footer>
+
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasContacto" aria-labelledby="offcanvasContactoLabel">
     <div class="offcanvas-header">
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
     </div>
@@ -226,7 +305,6 @@
         
     </div>
 </div>
-
-
 </body>
+
 </html>

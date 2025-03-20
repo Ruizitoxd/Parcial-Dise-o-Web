@@ -21,6 +21,7 @@ function duplicarItems() {
         fragmentoInicio.appendChild(item.cloneNode(true)); // Inicio
     });
 
+
     // Agregar los clones
     carrusel.appendChild(fragmentoFin);
     carrusel.insertBefore(fragmentoInicio, items[0]);
@@ -29,6 +30,7 @@ function duplicarItems() {
     items = Array.from(document.querySelectorAll(".item"));
 }
 duplicarItems();
+
 
 // ✅ Crear los dots dinámicamente (solo para el set principal)
 function crearDots() {
@@ -144,57 +146,70 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const monthName = document.getElementById("monthName");
-    const calDays = document.getElementById("calDays");
-    const prevMonth = document.getElementById("prevMonth");
-    const nextMonth = document.getElementById("nextMonth");
+//Sección para los botones del tipo cena
+const btn1 = document.getElementById("btn-almuerzo");
+const btn2 = document.getElementById("btn-cena");
+const slider = document.querySelector(".slider");
 
-    const months = [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-    ];
-
-    let currentDate = new Date();
-
-    function renderCalendar(date) {
-        calDays.innerHTML = "";
-        const year = date.getFullYear();
-        const month = date.getMonth();
-        monthName.textContent = `${months[month]}`;
-
-        // Primer día del mes
-        const firstDay = new Date(year, month, 1).getDay();
-        const lastDate = new Date(year, month + 1, 0).getDate();
-
-        // Días del mes anterior
-        const prevLastDate = new Date(year, month, 0).getDate();
-
-        for (let i = firstDay; i > 0; i--) {
-            calDays.innerHTML += `<button class="btn cal-btn" disabled>${prevLastDate - i + 1}</button>`;
-        }
-
-        // Días del mes actual
-        for (let i = 1; i <= lastDate; i++) {
-            calDays.innerHTML += `<button class="btn cal-btn">${i}</button>`;
-        }
+function toggleButtons(selected) {
+    if (selected === btn1) {
+        slider.classList.remove("right");
+        slider.classList.add("left");
+        btn1.classList.add("active");
+        btn2.classList.remove("active");
+    } else {
+        slider.classList.remove("left");
+        slider.classList.add("right");
+        btn2.classList.add("active");
+        btn1.classList.remove("active");
     }
+}
 
-    // Navegación de mes
-    prevMonth.addEventListener("click", () => {
-        currentDate.setMonth(currentDate.getMonth() - 1);
-        renderCalendar(currentDate);
+btn1.addEventListener("click", () => toggleButtons(btn1));
+btn2.addEventListener("click", () => toggleButtons(btn2));
+
+//Código para desplegar el menú del dropdown
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.querySelector(".mi-dropdown-button");
+    const dropdownContent = document.querySelector(".mi-dropdown-content");
+    const dropdownInput = document.querySelector(".mi-dropdown-input");
+
+    // Mostrar/ocultar el menú al hacer clic en el botón
+    dropdownButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdownContent.classList.toggle("show-menu");
     });
 
-    nextMonth.addEventListener("click", () => {
-        currentDate.setMonth(currentDate.getMonth() + 1);
-        renderCalendar(currentDate);
+    // Cerrar el menú al hacer clic fuera
+    document.addEventListener("click", function (event) {
+        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownContent.classList.remove("show-menu");
+        }
     });
 
-    // Renderizar el calendario inicial
-    renderCalendar(currentDate);
+    // Asignar valor al input cuando se selecciona una opción del menú
+    document.querySelectorAll(".mi-dropdown-menu li").forEach(item => {
+        item.addEventListener("click", function () {
+            dropdownInput.value = this.textContent;
+            dropdownContent.classList.remove("show-menu");
+        });
+    });
+
+    // Validar que el input tenga un número entre 1 y 3
+    dropdownInput.addEventListener("input", function () {
+        let value = parseInt(this.value);
+
+        if (isNaN(value)) return;
+
+        if (value < 1) {
+            this.value = 1;
+        } else if (value > 3) {
+            this.value = 3;
+        }
+    });
 });
 
+//Script del calendario
 document.addEventListener("DOMContentLoaded", () => {
     const calendar = document.getElementById("calendar");
     const currentDate = new Date();
