@@ -397,6 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
     generateCalendar(currentMonth, currentYear);
 });
 
+
 //cambiar fondo de reserva
 document.addEventListener("DOMContentLoaded", function () {
     const btnAlmuerzo = document.getElementById("btn-almuerzo");
@@ -421,4 +422,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+
+window.addEventListener("scroll", function () {
+    let scrollY = window.scrollY;
+    let newSize = 100 + (scrollY / 100); // Tamaño inicial - Ajusta la velocidad del zoom
+    document.querySelector(".GastronomiaAutentica").style.backgroundSize = `${newSize}%`;
+});
+
+//Desplegar sillas según la opción
+document.addEventListener("DOMContentLoaded", function () {
+    // Seleccionar el dropdown de personas
+    const dropdownPersonas = document.querySelector(".calendarioDropdown .mi-dropdown");
+    const inputPersonas = dropdownPersonas.querySelector(".mi-dropdown-input");
+    const opcionesPersonas = dropdownPersonas.querySelectorAll(".mi-dropdown-menu li");
+    const sillaContainer = document.getElementById("silla-container");
+
+    // Mostrar/Ocultar el menú de personas
+    dropdownPersonas.addEventListener("click", function () {
+        dropdownPersonas.classList.toggle("open");
+    });
+
+    // Asignar evento de selección a cada opción del dropdown de personas
+    opcionesPersonas.forEach(opcion => {
+        opcion.addEventListener("click", function () {
+            let valor = this.getAttribute("data-value");
+
+            if (!valor) return; // Prevenir errores si no hay data-value
+
+            // Actualizar el input con el número seleccionado
+            inputPersonas.value = valor;
+
+            // Cambiar la clase del contenedor de sillas
+            sillaContainer.classList.remove("Sillas-0", "Sillas-1", "Sillas-2", "Sillas-3");
+            sillaContainer.classList.add(`Sillas-${valor}`);
+
+            // Cerrar el dropdown después de seleccionar
+            dropdownPersonas.classList.remove("open");
+        });
+    });
+
+    // Cerrar el menú si se hace clic fuera del dropdown
+    document.addEventListener("click", function (event) {
+        if (!dropdownPersonas.contains(event.target)) {
+            dropdownPersonas.classList.remove("open");
+        }
+    });
+});
 
