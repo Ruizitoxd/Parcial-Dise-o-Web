@@ -33,7 +33,10 @@
                 <li><a href="#Nosotros">Nosotros</a></li>
                 <li><a href="#Menu">Menú</a></li>
                 <li><a href="#Reserva">Reserva</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li>
+                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasContacto" aria-controls="offcanvasContacto">Contacto</a>
+                </li>
+                
             </ul>
         </nav>
     </header>
@@ -79,35 +82,33 @@
 
     <!-- Sección de Carrusel-->
     <div class="Menu" id="Menu">
-        <h1>Nuestros Platos</h1>
 
-        <!-- Botón Anterior -->
-        <button class="btn-carrousel prev" id="prevBtn">❮</button>
+      <h1 class="Menu-titulo">Nuestros Platos</h1>
+      <div class="linea"></div>
 
-        <!-- Contenedor del Carrusel -->
-        <div class="carrusel-container">
-            <div class="carrusel" id="carrusel">
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 1"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 2"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 3"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 4"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 5"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 6"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 1"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 2"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 3"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 4"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 5"></div>
-                <div class="item"><img src="Images/Main_Image.jpg" alt="Plato 6"></div>
-            </div>
+     
+
+      <!-- Contenedor del Carrusel -->
+      <div class="contenedor-carrusel">
+        <button id="prevBtn">❮</button>
+        <div id="carrusel" class="carrusel">
+            <div class="item"><img src="Images/menu-carrusel1.jpg" alt="Plato 1"></div>
+            <div class="item"><img src="Images/menu-carrusel2.jpg" alt="Plato 2"></div>
+            <div class="item"><img src="Images/menu-carrusel3.jpg" alt="Plato 3"></div>
+            <div class="item"><img src="Images/menu-carrusel4.jpg" alt="Plato 4"></div>
+            <div class="item"><img src="Images/menu-carrusel5.jpg" alt="Plato 5"></div>
+            <div class="item"><img src="Images/menu-carrusel6.jpg" alt="Plato 6"></div>
         </div>
-
-        <!-- Botón Siguiente -->
-        <button class="btn-carrousel next" id="nextBtn">❯</button>
-
-        <!-- Indicadores (dots) -->
-        <div class="dots" id="dots"></div>
+        <button id="nextBtn">❯</button>
     </div>
+    <div id="dots" class="dots-container"></div>
+
+      
+
+      <!-- Indicadores (dots) -->
+      <div class="dots" id="dots"></div>
+  </div>
+       
 
     <div class="Platillo">
         <div class="Marmol">
@@ -244,6 +245,66 @@
             <p class="rights">Todos los derechos reservados | Delicato@</p>
         </div>
     </footer>
+
+ <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasContacto" aria-labelledby="offcanvasContactoLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <h1>Horarios</h1>
+
+        <div class="horarios">
+            <h4>Miercoles-Viernes</h4>
+            <p>3 p.m. - 12 a.m</p>
+
+            <h4>Sabado</h4>
+            <p>10:30 a.m - 12 a.m.</p>
+
+            <h4>Domingo</h4>
+            <p>10:30 a.m - 3 p.m.</p>
+        </div>
+
+        <div class="contact-container">
+            <h2>Contacto</h2>
+            <div class="Telefono">
+                <h4>Teléfono</h4>
+                <p>+39 0746249202</p>
+                <a href="tel:+390746249202" class="call-button" title="Llamar">
+                    <div class="icon-container">📞 Llamar</div>
+                </a>
+            </div>
+        
+            <div class="correo">
+                <h4>Correo</h4>
+                <p>info@ristorantedelicato.it</p>
+                <a href="mailto:info@ristorantedelicato.it?subject=Consulta&body=Hola, me gustaría más información." 
+                   class="email-button" title="Enviar correo">
+                    <div class="icon-container">📧 Enviar</div>
+                </a>
+            </div>
+        
+        </div>
+
+        <div>
+            <h4>Dirección</h4>
+            <p>Via Umberto I, 2, 02043 Contigliano RI</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1900.6259912746705!2d12.76524883049025!3d42.40911966870392!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f0169f47aa0e5%3A0x8d39707f4b52b82c!2sDELICATO%20%7C%20Ristorante!5e1!3m2!1sit!2sit!4v1742417629730!5m2!1sit!2sit" 
+                width="300" 
+                height="150" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        
+        
+
+
+        
+    </div>
+</div>
 </body>
 
 </html>
