@@ -296,3 +296,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     generateCalendar(currentMonth, currentYear);
 });
+
+window.addEventListener("scroll", function () {
+    let scrollY = window.scrollY;
+    let newSize = 100 + (scrollY / 100); // Tamaño inicial - Ajusta la velocidad del zoom
+    document.querySelector(".GastronomiaAutentica").style.backgroundSize = `${newSize}%`;
+});
