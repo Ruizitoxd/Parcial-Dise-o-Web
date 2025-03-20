@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth; /* Animación suave al scrollear */
 }
@@ -33,6 +32,10 @@ header {
     z-index: 1000;
 
     transition: height 0.3s ease-in-out; /* Transición para el tamaño del header*/
+}
+
+header .black {
+    background-color: rgb(0, 0, 0);
 }
 
 /* Imágenes de encabezado*/
@@ -123,7 +126,7 @@ nav ul li a:hover {
 }
 
 .AtmosferaDivider img {
-    max-width: 100%;
+    max-width: 12%;
     height: auto;
     display: block;
 }
@@ -209,16 +212,31 @@ nav ul li a:hover {
 /* Contenedor principal */
 .Menu {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 150px;
+    height: 100vh;
     position: relative;
 }
 
-.Menu h1{
-    
+
+.Menu-titulo{
+    font-family: "Quattrocento", serif;
+    font-size: 5vw;
 }
 
+.linea{
+    width: 95%; /* Ajusta el largo de la línea */
+    height: 3px;  /* Grosor de la línea */
+    margin: 0 auto; /* Centrar la línea */
+    margin-top: 40px;
+    margin-bottom: 200px;
+    
+    /* Gradiente para efecto de desvanecido */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, black 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+
 /* Botones de navegación */
-.btn {
+.btn-carrousel {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -240,64 +258,70 @@ nav ul li a:hover {
     right: 5%;
 }
 
-/* Contenedor del carrusel */
-.carrusel-container {
-    width: 80%;
-    margin: 0 auto;
-    overflow: hidden;
+/* Estilos básicos del carrusel */
+.contenedor-carrusel {
     position: relative;
+    overflow: hidden;
+    width: 100%;
 }
 
-/* Carrusel */
 .carrusel {
     display: flex;
-    gap: 50px; /* Espaciado entre las imágenes */
     transition: transform 0.8s ease;
+    gap: 50px;
+    transform: translate(0,-10%);
 }
 
-/* Imágenes del carrusel */
 .item {
-    min-width: 250px;
-    height: 350px;
-    transition: transform 0.8s ease, box-shadow 0.8s ease;
+    min-width: 300px;
+    box-sizing: border-box;
+    transition: transform 0.8s ease;
+   
+    
 }
 
-/* Imagen activa (aumento de tamaño) */
-.item.active {
-    transform: scale(1.2); /* Aumento del 8% */
-    z-index: 10; /* Prioridad de la imagen activa */
-}
-
-/* Ajustar las imágenes */
-.item img {
+img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+    border-radius: 12px;
 }
 
-/* Indicadores (dots) */
-.dots {
-    margin-top: 20px;
+/* Botones de navegación */
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+/* Dots de navegación */
+.dots-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .dot {
-    height: 12px;
     width: 12px;
+    height: 12px;
     margin: 0 5px;
-    background-color: #bbb;
+    background: #bbb;
     border-radius: 50%;
-    display: inline-block;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .dot.active {
-    background-color: #4CAF50; /* Dot activo */
+    background: #4CAF50;
 }
 
-
-.platillo {
+.Platillo {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -311,16 +335,14 @@ nav ul li a:hover {
 
 
 /* Sección de platos fuertes*/
-.platillo div {
+.Platillo div {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px; /* Espacio entre la imagen y el texto */
     width: 42%; /* Define un ancho para la sección de cada platillo */
-}
 
-
-.marmol{
+.Marmol{
     width: 40%; /* Ajusta el ancho de la sección de mármol */
     height: 100%; /* Permite que la altura se adapte al contenido */
     background: url('Images/Fondo_Marmol.png');
@@ -361,7 +383,7 @@ nav ul li a:hover {
 }
 
 /* Fondo difuminado */
-.platillo::before {
+.Platillo::before {
     content: "";
     position: absolute;
     top: 0;
@@ -415,6 +437,348 @@ nav ul li a:hover {
     font-size: 30px;
     color: white;
     cursor: pointer;
+
+/* Sección para la reserva */
+.Reserva {
+    background-image: radial-gradient(farthest-corner at 90% 10%, #694427, black);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/* Sección exterior de la carta de reserva */
+.ReservaCardContainer {
+    position: relative;
+    background: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% ),url(Images/Fondo_Marmol.png);
+    padding: 1.5em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    height: 75%;
+    width: 30%;
+    margin-left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección interior de la carta de reserva */
+.ReservaCardContentContainer {
+    background: transparent;
+    padding: 2em;
+    height: 97%;
+    width: 100%;
+    text-align: left;
+    color: black;
+    border: 4px dotted black;
+    font-family: "Quattrocento", serif;
+}
+
+.ReservaCardContainer h1 {
+    background: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% ),url(Images/Fondo_Marmol.png);
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    font-family: "Quattrocento", serif;
+    font-size: 2.5vw;
+    text-align: center;
+    padding: 0 1em;
+}
+
+.ReservaCardContainer h3 {
+    font-family: "Birthstone", cursive;
+    font-size: 4vw;
+}
+
+/* Sección de los botones de la cena*/
+.GrupoBotonesTipoCena {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+/* Estilo de los botones */
+.GrupoBotonesTipoCena button {
+    flex: 1; /* Hace que los botones ocupen el mismo espacio */
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    position: relative;
+    z-index: 1;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+/* Estilo del botón activo */
+.GrupoBotonesTipoCena button.active {
+    color: white;
+}
+
+ /* Barra deslizante */
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #8bc34a;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Posición inicial */
+.left {
+    transform: translateX(0%);
+}
+
+.right {
+    transform: translateX(100%);
+}
+
+/* CSS que acomoda la sección especial de la reserva */
+.calendarioDropdown {
+    display: flex;
+}
+
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+/* Personalización de los dropdown de personas y hora */
+.mi-dropdown {
+    position: relative;
+    width: 40%;
+}
+
+.mi-dropdown-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    overflow: hidden;
+    background-color: white;
+}
+
+.mi-dropdown-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    background: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.mi-dropdown-button i {
+    font-size: 18px;
+    color: #707070;;
+}
+
+.mi-dropdown-button .arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #707070;
+}
+
+.mi-dropdown-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    flex: 1;
+    outline: none;
+    text-align: center;
+}
+
+.mi-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid gray;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none; /* Se oculta por defecto */
+}
+
+.mi-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mi-dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mi-dropdown-menu li:hover {
+    background: lightgray;
+}
+
+/* Clase para mostrar el menú */
+.show-menu {
+    display: block !important; /* Ahora sí se mostrará */
+}
+
+/* CSS deñ calendario */
+/* Estilo del calendario */
+.cal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Encabezado del mes */
+.cal-month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+/* Botones de navegación del mes */
+.cal-btn {
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cal-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Nombre del mes */
+.cal-month-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Días de la semana */
+.cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+/* Días del mes */
+.cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px; /* Espacio entre los días */
+}
+
+/* Botón de los días */
+.cal-days .cal-btn {
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* Día activo (seleccionado) */
+.cal-days .cal-btn:focus {
+    background-color: #0d6efd; /* Color primario de Bootstrap */
+    color: white;
+    outline: none;
+}
+
+/* Días deshabilitados (mes anterior o siguiente) */
+.cal-days .cal-btn:disabled {
+    color: #adb5bd;
+    cursor: not-allowed;
+    background: none;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+    .w-340px {
+        width: 100%;
+    }
+
+    .cal-btn {
+        padding: 0.5rem;
+    }
+}
+
+.calendar-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.calendar {
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nav-btn {
+    background: #8bc34a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.date, .empty {
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.date:hover {
+    background: #93b786;
+    color: white;
+}
+
+.selected {
+    background: #8bc34a !important; /* Priorizar el color seleccionado sobre el hover*/
+    color: white;
+}
+
+/* Botón final del formulario */
+.reserva-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #8bc34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 /* Footer */
@@ -517,11 +881,230 @@ footer {
 }
 
 .footer-text {
-    font-size: 1.5vw;
+    font-family: "Birthstone", cursive;
+    font-size: 3.5vw;
     font-style: italic;
 }
 
 .rights {
     font-size: 1vw;
     margin-top: 0.5vw;
+
+}
+
+/* Centrar el contenido del offcanvas */
+.offcanvas-body {
+    display: flex;                
+    flex-direction: column;       
+    justify-content: left;      
+    align-items: center;          
+    text-align: left;           
+    height: 100%;                 
+}
+
+/* Botón de llamada (Teléfono) */
+.call-button,
+.email-button {
+    display: flex;                
+    align-items: center;          
+    justify-content: center;      
+    text-decoration: none;        
+    background-color: #4CAF50;    /* Color de fondo */
+    color: white;                 /* Color del ícono */
+    border-radius: 25px;          /* Bordes redondeados */
+    width: 150px;                 /* Ancho del botón */
+    height: 50px;                 /* Alto del botón */
+    margin: 20px 0;               /* Espaciado */
+    font-size: 18px;              /* Tamaño del texto */
+    transition: background 0.3s;  /* Animación suave */          
+}
+
+.call-button:hover {
+    background-color: #409143;    /* Color al pasar el mouse */
+}
+
+.icon-container{
+    align-items: center;
+}
+
+
+/* Estilo del mapa */
+iframe {
+    margin: 20px 0;               
+    border-radius: 10px;          
+}
+
+.email-button:hover {
+    background-color: #409143;   
+}
+
+/* Texto "Message Here" en blanco */
+.wixui-rich-text__text {
+    color: white !important;     
+}
+
+/* Ajuste de títulos y párrafos */
+h1, h2, h4 {
+    margin: 10px 0;              
+}
+
+p {
+    margin: 5px 0;               
+}
+
+ /* Estilo del contenedor principal */
+ .w-340px {
+    width: 340px; /* Ancho del calendario */
+}
+
+/* Estilo del calendario */
+.cal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Encabezado del mes */
+.cal-month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+/* Botones de navegación del mes */
+.cal-btn {
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cal-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Nombre del mes */
+.cal-month-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Días de la semana */
+.cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+/* Días del mes */
+.cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px; /* Espacio entre los días */
+}
+
+/* Botón de los días */
+.cal-days .cal-btn {
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+/* Día activo (seleccionado) */
+.cal-days .cal-btn:focus {
+    background-color: #0d6efd; /* Color primario de Bootstrap */
+    color: white;
+    outline: none;
+}
+
+/* Días deshabilitados (mes anterior o siguiente) */
+.cal-days .cal-btn:disabled {
+    color: #adb5bd;
+    cursor: not-allowed;
+    background: none;
+}
+
+/* Responsividad */
+@media (max-width: 576px) {
+    .w-340px {
+        width: 100%;
+    }
+
+    .cal-btn {
+        padding: 0.5rem;
+    }
+}
+
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+}
+.dropdowns {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.calendar {
+    text-align: center;
+}
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.nav-btn {
+    background: #8bc34a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.days, .dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+.date, .empty {
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.date:hover {
+    background: #8bc34a;
+    color: white;
+}
+.selected {
+    background: #8bc34a;
+    color: white;
+}
+.reserva-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #8bc34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+
 }
