@@ -163,7 +163,34 @@ function toggleButtons(selected) {
         btn2.classList.add("active");
         btn1.classList.remove("active");
     }
-}
+  }
+
+//Código para acomodar el modal de las imagenes de platos principales.
+document.addEventListener("DOMContentLoaded", function () {
+    const foodImages = document.querySelectorAll(".food-item img");
+
+    // Crear el overlay para la imagen en pantalla completa
+    const overlay = document.createElement("div");
+    overlay.classList.add("fullscreen-overlay");
+    overlay.innerHTML = `<img src="" alt="Imagen ampliada">`;
+    document.body.appendChild(overlay);
+
+    const overlayImage = overlay.querySelector("img");
+
+    foodImages.forEach(img => {
+        img.addEventListener("click", () => {
+            overlayImage.src = img.src;
+            overlay.classList.add("active");
+        });
+    });
+
+    // Cerrar la imagen al hacer clic en cualquier parte del overlay
+    overlay.addEventListener("click", () => {
+        overlay.classList.remove("active");
+    });
+});
+
+
 
 btn1.addEventListener("click", () => toggleButtons(btn1));
 btn2.addEventListener("click", () => toggleButtons(btn2));
@@ -269,4 +296,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     generateCalendar(currentMonth, currentYear);
 });
-

@@ -321,7 +321,7 @@ img {
     background: #4CAF50;
 }
 
-.Platillo {
+.platillo {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -329,40 +329,22 @@ img {
     flex-direction: column;
     align-items: flex-end; /* Alinea los elementos a la derecha */
     justify-content: center;
-    color: purple;
+    color: black;
     gap: 20px;
 }
 
+
 /* Sección de platos fuertes*/
-.Platillo div {
+.platillo div {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 10px; /* Espacio entre la imagen y el texto */
-    width: 40%; /* Define un ancho para la sección de cada platillo */
+    width: 42%; /* Define un ancho para la sección de cada platillo */
 }
 
-.Platillo h2 {
-    margin: 0;
-    text-align: right; /* Alinea el texto a la derecha */
-    font-size: 20px;
-}
 
-.Platillo img {
-    width: 90%; /* Ajusta el tamaño de las imágenes */
-    height: 90%;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.Fettuccine img {
-    width: 90%; /* Ajusta el tamaño de las imágenes */
-    height: 90%;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-.Marmol{
+.marmol{
     width: 40%; /* Ajusta el ancho de la sección de mármol */
     height: 100%; /* Permite que la altura se adapte al contenido */
     background: url('Images/Fondo_Marmol.png');
@@ -375,8 +357,35 @@ img {
     gap: 15px; /* Espaciado entre los elementos */
 }
 
+.food-item h4{
+    font-size: 350%;
+}
+
+.food-item h2{
+    font-size: 260%;
+}
+
+.food-item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre la imagen y el nombre */
+}
+
+
+.food-item img {
+    width: 90%; /* Ajusta el tamaño de la imagen */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+
+.food-item img:hover {
+    transform: translateY(-5px);
+}
+
 /* Fondo difuminado */
-.Platillo::before {
+.platillo::before {
     content: "";
     position: absolute;
     top: 0;
@@ -390,6 +399,46 @@ img {
     background-attachment: fixed;
     filter: blur(10px);
     z-index: -1;
+}
+
+/* Estilos para la imagen en pantalla completa */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fullscreen-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cursor para cerrar */
+.fullscreen-overlay::after {
+    content: "✖";
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
 }
 
 /* Sección para la reserva */
@@ -855,9 +904,6 @@ footer {
     text-align: left;           
     height: 100%;                 
 }
-
-
-
 
 /* Botón de llamada (Teléfono) */
 .call-button,
