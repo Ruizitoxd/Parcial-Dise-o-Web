@@ -593,21 +593,29 @@ img {
     width: inherit;
 }
 
-/* Personalización de los dropdown de personas y hora */
-.mi-dropdown {
-    position: relative;
-    width: 40%;
+/* Contenedor principal para ambos dropdowns */
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
 }
 
-.mi-dropdown-container {
+/* ======== Dropdown de Personas ======== */
+.personas-dropdown {
+    position: relative;
+    width: 90%;
+}
+
+.personas-dropdown-container {
     display: flex;
+    margin-bottom: 5%;
     align-items: center;
     border: 1px solid gray;
     overflow: hidden;
     background-color: white;
 }
 
-.mi-dropdown-button {
+.personas-dropdown-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -619,19 +627,18 @@ img {
     position: relative;
 }
 
-.mi-dropdown-button i {
+.personas-dropdown-button i {
     font-size: 18px;
     color: #707070;
-    ;
 }
 
-.mi-dropdown-button .arrow {
+.personas-dropdown-button .arrow {
     font-size: 12px;
     margin-left: 5px;
     color: #707070;
 }
 
-.mi-dropdown-input {
+.personas-dropdown-input {
     border: none;
     padding: 10px;
     width: 100%;
@@ -640,7 +647,7 @@ img {
     text-align: center;
 }
 
-.mi-dropdown-content {
+.personas-dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
@@ -650,30 +657,115 @@ img {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 100;
     display: none;
-    /* Se oculta por defecto */
 }
 
-.mi-dropdown-menu {
+.personas-dropdown-menu {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.mi-dropdown-menu li {
+.personas-dropdown-menu li {
     padding: 10px;
     cursor: pointer;
     text-align: center;
 }
 
-.mi-dropdown-menu li:hover {
+.personas-dropdown-menu li:hover {
     background: lightgray;
 }
 
-/* Clase para mostrar el menú */
+/* Mostrar el menú desplegable */
+.personas-show-menu {
+    display: block !important;
+}
+
+/* ======== Dropdown de Horas ======== */
+.hora-dropdown {
+    position: relative;
+    width: 90%;
+}
+
+.hora-dropdown-container {
+    display: flex;
+    margin-bottom: 5%;
+    align-items: center;
+    border: 1px solid gray;
+    overflow: hidden;
+    background-color: white;
+}
+
+.hora-dropdown-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    background: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.hora-dropdown-button i {
+    font-size: 18px;
+    color: #707070;
+}
+
+.hora-dropdown-button .arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #707070;
+}
+
+.hora-dropdown-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    flex: 1;
+    outline: none;
+    text-align: center;
+}
+
+.hora-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid gray;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none;
+}
+
+.hora-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hora-dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.hora-dropdown-menu li:hover {
+    background: lightgray;
+}
+
+/* Mostrar el menú desplegable */
+.hora-show-menu {
+    display: block !important;
+}
+
+/* Mostrar cualquier dropdown al hacer clic */
 .show-menu {
     display: block !important;
-    /* Ahora sí se mostrará */
 }
+
+
 
 
 
@@ -1010,6 +1102,7 @@ p {
     border-radius: 6px;
     cursor: pointer;
     margin-top: 8px;
+
 }
 
 /* Clase para el fondo oscuro */
@@ -1052,4 +1145,3 @@ p {
     /* Color de fondo */
     color: white;
     /* Color del texto */
-}

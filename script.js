@@ -197,42 +197,142 @@ btn2.addEventListener("click", () => toggleButtons(btn2));
 
 //Código para desplegar el menú del dropdown
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdownButton = document.querySelector(".mi-dropdown-button");
-    const dropdownContent = document.querySelector(".mi-dropdown-content");
-    const dropdownInput = document.querySelector(".mi-dropdown-input");
+    // Seleccionar todos los dropdowns de personas y horas
+    const dropdowns = document.querySelectorAll(".personas-dropdown, .hora-dropdown");
 
-    // Mostrar/ocultar el menú al hacer clic en el botón
-    dropdownButton.addEventListener("click", function (event) {
-        event.stopPropagation();
-        dropdownContent.classList.toggle("show-menu");
-    });
+    dropdowns.forEach(dropdown => {
+        const dropdownButton = dropdown.querySelector("button");
+        const dropdownContent = dropdown.querySelector(".personas-dropdown-content, .hora-dropdown-content");
+        const dropdownInput = dropdown.querySelector("input");
 
-    // Cerrar el menú al hacer clic fuera
-    document.addEventListener("click", function (event) {
-        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
-            dropdownContent.classList.remove("show-menu");
-        }
-    });
+        // Mostrar/ocultar el menú al hacer clic en el botón
+        dropdownButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            dropdownContent.classList.toggle("show-menu");
 
-    // Asignar valor al input cuando se selecciona una opción del menú
-    document.querySelectorAll(".mi-dropdown-menu li").forEach(item => {
-        item.addEventListener("click", function () {
-            dropdownInput.value = this.textContent;
+            // Cerrar otros dropdowns abiertos
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    const otherContent = otherDropdown.querySelector(".personas-dropdown-content, .hora-dropdown-content");
+                    otherContent.classList.remove("show-menu");
+                }
+            });
+        });
+
+        // Cerrar el menú al hacer clic fuera
+        document.addEventListener("click", function () {
             dropdownContent.classList.remove("show-menu");
         });
-    });
 
-    // Validar que el input tenga un número entre 1 y 3
-    dropdownInput.addEventListener("input", function () {
-        let value = parseInt(this.value);
+        // Asignar valor al input al seleccionar una opción
+        dropdownContent.querySelectorAll("li").forEach(item => {
+            item.addEventListener("click", function () {
+                dropdownInput.value = this.textContent;
+                dropdownContent.classList.remove("show-menu");
+            });
+        });
 
-        if (isNaN(value)) return;
+        // Validar el rango del input en el dropdown de personas (1-3)
+        if (dropdownInput.placeholder === "Personas") {
+            dropdownInput.addEventListener("input", function () {
+                let value = parseInt(this.value);
 
-        if (value < 1) {
-            this.value = 1;
-        } else if (value > 3) {
-            this.value = 3;
+                if (isNaN(value)) return;
+
+                if (value < 1) this.value = 1;
+                if (value > 3) this.value = 3;
+            });
         }
+    });
+});
+
+// Validar el formulario de reserva
+document.querySelector(".reserva-btn").addEventListener("click", function (event) {
+    event.preventDefault(); // Evita que se envíe el formulario si hay errores
+
+    let nombre = document.getElementById("nombre").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let telefono = document.getElementById("telefono").value.trim();
+    let personas = document.querySelector(".personas-dropdown-input").value.trim();
+    let hora = document.querySelector(".hora-dropdown-input").value.trim();
+    let fecha = document.getElementById("calendar").textContent.trim(); // Ajusta según cómo obtienes la fecha
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Validar email
+    let telefonoRegex = /^[0-9]{7,15}$/; // Teléfono: solo números y mínimo 7 dígitos
+
+    if (!nombre) {
+        alert("Por favor, ingresa tu nombre.");
+        return;
+    }
+
+    if (!emailRegex.test(email)) {
+        alert("Por favor, ingresa un correo válido.");
+        return;
+    }
+
+    if (!telefonoRegex.test(telefono)) {
+        alert("Por favor, ingresa un número de teléfono válido (mínimo 7 dígitos).");
+        return;
+    }
+
+    if (!personas || isNaN(personas) || personas < 1 || personas > 3) {
+        alert("Selecciona una cantidad válida de personas (1-3).");
+        return;
+    }
+
+    if (!hora) {
+        alert("Selecciona una hora válida.");
+        return;
+    }
+
+    if (!fecha) {
+        alert("Selecciona una fecha para la reserva.");
+        return;
+    }
+
+    alert("Reserva realizada con éxito.");
+    document.querySelector("form").submit(); // Envía el formulario si todo está bien
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    emailjs.init("X1hTCkeS_6iqy9AsH"); // Reemplaza con tu User ID de EmailJS
+
+    document.querySelector(".reserva-btn").addEventListener("click", function (event) {
+        event.preventDefault(); // Evita el envío tradicional del formulario
+
+        let nombre = document.getElementById("nombre").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let telefono = document.getElementById("telefono").value.trim();
+        let personas = document.querySelector(".personas-dropdown-input").value.trim();
+        let hora = document.querySelector(".hora-dropdown-input").value.trim();
+        
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        let telefonoRegex = /^[0-9]{7,15}$/;
+
+        if (!nombre || !emailRegex.test(email) || !telefonoRegex.test(telefono) || !personas || !hora) {
+            alert("Por favor, completa todos los campos correctamente.");
+            return;
+        }
+
+        // Datos que se enviarán al correo
+        let templateParams = {
+            nombre: nombre,
+            email: email,
+            telefono: telefono,
+            personas: personas,
+            hora: hora,
+        };
+
+        // Enviar correo
+        emailjs.send("service_jpzv2nl", "template_ay0w05s", templateParams)
+            .then(function (response) {
+                alert("Reserva enviada con éxito. Revisa tu correo.");
+                document.querySelector("form").reset(); // Limpia el formulario
+            }, function (error) {
+                alert("Error al enviar la reserva. Inténtalo más tarde.");
+                console.error("Error al enviar:", error);
+            });
     });
 });
 
