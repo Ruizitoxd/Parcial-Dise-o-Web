@@ -35,6 +35,10 @@ header {
     transition: height 0.3s ease-in-out; /* Transición para el tamaño del header*/
 }
 
+header .black {
+    background-color: rgb(0, 0, 0);
+}
+
 /* Imágenes de encabezado*/
 header img {
     height: auto;
@@ -213,12 +217,8 @@ nav ul li a:hover {
     position: relative;
 }
 
-.Menu h1{
-    
-}
-
 /* Botones de navegación */
-.btn {
+.btn-carrousel {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -296,8 +296,7 @@ nav ul li a:hover {
     background-color: #4CAF50; /* Dot activo */
 }
 
-
-.platillo {
+.Platillo {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -310,7 +309,7 @@ nav ul li a:hover {
 }
 
 /* Sección de platos fuertes*/
-.platillo div {
+.Platillo div {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -318,13 +317,13 @@ nav ul li a:hover {
     width: 40%; /* Define un ancho para la sección de cada platillo */
 }
 
-.platillo h2 {
+.Platillo h2 {
     margin: 0;
     text-align: right; /* Alinea el texto a la derecha */
     font-size: 20px;
 }
 
-.platillo img {
+.Platillo img {
     width: 90%; /* Ajusta el tamaño de las imágenes */
     height: 90%;
     object-fit: cover;
@@ -338,7 +337,7 @@ nav ul li a:hover {
     border-radius: 15px;
 }
 
-.marmol{
+.Marmol{
     width: 40%; /* Ajusta el ancho de la sección de mármol */
     height: 100%; /* Permite que la altura se adapte al contenido */
     background: url('Images/Fondo_Marmol.png');
@@ -351,9 +350,8 @@ nav ul li a:hover {
     gap: 15px; /* Espaciado entre los elementos */
 }
 
-
 /* Fondo difuminado */
-.platillo::before {
+.Platillo::before {
     content: "";
     position: absolute;
     top: 0;
@@ -367,6 +365,201 @@ nav ul li a:hover {
     background-attachment: fixed;
     filter: blur(10px);
     z-index: -1;
+}
+
+/* Sección para la reserva */
+.Reserva {
+    background-image: radial-gradient(farthest-corner at 90% 10%, #694427, black);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+/* Sección exterior de la carta de reserva */
+.ReservaCardContainer {
+    position: relative;
+    background: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% ),url(Images/Fondo_Marmol.png);
+    padding: 1.5em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    height: 75%;
+    width: 30%;
+    margin-left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección interior de la carta de reserva */
+.ReservaCardContentContainer {
+    background: transparent;
+    padding: 2em;
+    height: 97%;
+    width: 100%;
+    text-align: left;
+    color: black;
+    border: 4px dotted black;
+    font-family: "Quattrocento", serif;
+}
+
+.ReservaCardContainer h1 {
+    background: linear-gradient(rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100% ),url(Images/Fondo_Marmol.png);
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    font-family: "Quattrocento", serif;
+    font-size: 2.5vw;
+    text-align: center;
+    padding: 0 1em;
+}
+
+.ReservaCardContainer h3 {
+    font-family: "Birthstone", cursive;
+    font-size: 4vw;
+}
+
+/* Botón final del formulario */
+.ReservaCardContentContainerButton {
+    background: #93b786;
+    color: white;
+    font-family: "Quattrocento", serif;
+    font-size: 1.5vw;
+    border: none;
+    border-radius: 8px;
+    padding: 0em 1em;
+}
+
+/* Sección de los botones de la cena*/
+.GrupoBotonesTipoCena {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+/* Estilo de los botones */
+.GrupoBotonesTipoCena button {
+    flex: 1; /* Hace que los botones ocupen el mismo espacio */
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    position: relative;
+    z-index: 1;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+/* Estilo del botón activo */
+.GrupoBotonesTipoCena button.active {
+    color: white;
+}
+
+ /* Barra deslizante */
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #93b786;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Posición inicial */
+.left {
+    transform: translateX(0%);
+}
+
+.right {
+    transform: translateX(100%);
+}
+
+/* Personalización de los dropdown de personas y hora */
+.mi-dropdown {
+    position: relative;
+    width: 40%;
+    margin-bottom: 5%;
+}
+
+.mi-dropdown-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+    overflow: hidden;
+    background-color: white;
+}
+
+.mi-dropdown-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    background: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.mi-dropdown-button i {
+    font-size: 18px;
+    color: #707070;;
+}
+
+.mi-dropdown-button .arrow {
+    font-size: 12px;
+    margin-left: 5px;
+    color: #707070;
+}
+
+.mi-dropdown-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    flex: 1;
+    outline: none;
+    text-align: center;
+}
+
+.mi-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid gray;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    display: none; /* Se oculta por defecto */
+}
+
+.mi-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mi-dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mi-dropdown-menu li:hover {
+    background: lightgray;
+}
+
+/* Clase para mostrar el menú */
+.show-menu {
+    display: block !important; /* Ahora sí se mostrará */
 }
 
 /* Footer */
@@ -469,7 +662,8 @@ footer {
 }
 
 .footer-text {
-    font-size: 1.5vw;
+    font-family: "Birthstone", cursive;
+    font-size: 3.5vw;
     font-style: italic;
 }
 

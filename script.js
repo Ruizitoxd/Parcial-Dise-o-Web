@@ -21,7 +21,6 @@ items.forEach((item) => {
     carrusel.insertBefore(clone, carrusel.firstChild); // Clonar al inicio
 });
 
-
 // Actualizar lista de todos los elementos (originales + clones)
 const allItems = document.querySelectorAll(".item");
 
@@ -158,4 +157,67 @@ document.addEventListener("DOMContentLoaded", function () {
       logo.style.width = `${originalLogoHeight * aspectRatio}px`; // Restauramos el ancho
     }
   });
+});
+
+//Sección para los botones del tipo cena
+const btn1 = document.getElementById("btn-almuerzo");
+const btn2 = document.getElementById("btn-cena");
+const slider = document.querySelector(".slider");
+
+function toggleButtons(selected) {
+    if (selected === btn1) {
+        slider.classList.remove("right");
+        slider.classList.add("left");
+        btn1.classList.add("active");
+        btn2.classList.remove("active");
+    } else {
+        slider.classList.remove("left");
+        slider.classList.add("right");
+        btn2.classList.add("active");
+        btn1.classList.remove("active");
+    }
+}
+
+btn1.addEventListener("click", () => toggleButtons(btn1));
+btn2.addEventListener("click", () => toggleButtons(btn2));
+
+//Código para desplegar el menú del dropdown
+document.addEventListener("DOMContentLoaded", function () {
+    const dropdownButton = document.querySelector(".mi-dropdown-button");
+    const dropdownContent = document.querySelector(".mi-dropdown-content");
+    const dropdownInput = document.querySelector(".mi-dropdown-input");
+
+    // Mostrar/ocultar el menú al hacer clic en el botón
+    dropdownButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdownContent.classList.toggle("show-menu");
+    });
+
+    // Cerrar el menú al hacer clic fuera
+    document.addEventListener("click", function (event) {
+        if (!dropdownButton.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownContent.classList.remove("show-menu");
+        }
+    });
+
+    // Asignar valor al input cuando se selecciona una opción del menú
+    document.querySelectorAll(".mi-dropdown-menu li").forEach(item => {
+        item.addEventListener("click", function () {
+            dropdownInput.value = this.textContent;
+            dropdownContent.classList.remove("show-menu");
+        });
+    });
+
+    // Validar que el input tenga un número entre 1 y 3
+    dropdownInput.addEventListener("input", function () {
+        let value = parseInt(this.value);
+
+        if (isNaN(value)) return;
+
+        if (value < 1) {
+            this.value = 1;
+        } else if (value > 3) {
+            this.value = 3;
+        }
+    });
 });
